@@ -61,8 +61,8 @@ extension AuthViewModel {
             .store(in: &cancellables)
     }
     
-    func singUp(inputEmail: String, inputPw: String, inputName: String, inputUserId: String, selectedUserType: UserType) {
-        AuthService.createUser(inputEmail, inputPw)
+    func singUp(emailInput: String, pwInput: String, nameInput: String, userIdInput: String, selectedUserType: UserType) {
+        AuthService.createUser(emailInput, pwInput)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .failure(let error):
@@ -72,8 +72,8 @@ extension AuthViewModel {
                     print("successfully create User")
                 }
             }, receiveValue: { [weak self] in
-                if let userUID = Auth.auth().currentUser?.uid {
-                    UserService.createUser(userUID: userUID, userName: inputName, userId: inputUserId, userType: selectedUserType.rawValue)
+                if let userUid = Auth.auth().currentUser?.uid {
+                    UserService.createUser(userUID: userUid, userName: nameInput, userId: userIdInput, userType: selectedUserType.rawValue)
                         .sink(receiveCompletion: { completion in
                             switch completion {
                             case .finished:

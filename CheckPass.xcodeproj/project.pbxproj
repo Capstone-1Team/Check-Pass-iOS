@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */; };
+		5C0341E82AAB5729004D7E6A /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E72AAB5729004D7E6A /* EmailInputView.swift */; };
+		5C0341EA2AAB622C004D7E6A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E92AAB622C004D7E6A /* ProgressBarView.swift */; };
+		5C0341EC2AAB6D07004D7E6A /* EmailInputStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341EB2AAB6D07004D7E6A /* EmailInputStateView.swift */; };
+		5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729372AAD871F007CA69B /* PasswordInputView.swift */; };
+		5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */; };
+		5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */; };
 		5C76F0002AA60A970074D803 /* CheckPassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76EFFF2AA60A970074D803 /* CheckPassApp.swift */; };
 		5C76F0022AA60A970074D803 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76F0012AA60A970074D803 /* ContentView.swift */; };
 		5C76F0042AA60A980074D803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F0032AA60A980074D803 /* Assets.xcassets */; };
 		5C76F0072AA60A980074D803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F0062AA60A980074D803 /* Preview Assets.xcassets */; };
 		5C76F00E2AA60B4F0074D803 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */; };
 		5C76F0112AA60BA90074D803 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C76F0102AA60BA90074D803 /* FirebaseAnalytics */; };
+		5CD25D6F2AAA06780037B305 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD25D6E2AAA06780037B305 /* UserService.swift */; };
+		5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */; };
+		5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */; };
 		5CDCC0092AA6DC90000B59E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0082AA6DC90000B59E4 /* User.swift */; };
 		5CDCC00B2AA6DD40000B59E4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */; };
 		5CDCC00E2AA6F46D000B59E4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5CDCC00D2AA6F46D000B59E4 /* FirebaseAuth */; };
@@ -23,12 +33,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		5C0341E72AAB5729004D7E6A /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
+		5C0341E92AAB622C004D7E6A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		5C0341EB2AAB6D07004D7E6A /* EmailInputStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputStateView.swift; sourceTree = "<group>"; };
+		5C6729372AAD871F007CA69B /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
+		5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
+		5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputStateView.swift; sourceTree = "<group>"; };
 		5C76EFFC2AA60A970074D803 /* CheckPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C76EFFF2AA60A970074D803 /* CheckPassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPassApp.swift; sourceTree = "<group>"; };
 		5C76F0012AA60A970074D803 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C76F0032AA60A980074D803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C76F0062AA60A980074D803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CD25D6E2AAA06780037B305 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
 		5CDCC0082AA6DC90000B59E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5CDCC0112AA6F48A000B59E4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -42,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C76F0112AA60BA90074D803 /* FirebaseAnalytics in Frameworks */,
+				5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */,
 				5CDCC0102AA6F46D000B59E4 /* FirebaseAuthCombine-Community in Frameworks */,
 				5CDCC00E2AA6F46D000B59E4 /* FirebaseAuth in Frameworks */,
 			);
@@ -50,6 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0341E62AAB571D004D7E6A /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				5C0341E72AAB5729004D7E6A /* EmailInputView.swift */,
+				5C0341E92AAB622C004D7E6A /* ProgressBarView.swift */,
+				5C0341EB2AAB6D07004D7E6A /* EmailInputStateView.swift */,
+				5C6729372AAD871F007CA69B /* PasswordInputView.swift */,
+				5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */,
+				5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */,
+				5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
 		5C76EFF32AA60A970074D803 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +104,7 @@
 		5C76EFFE2AA60A970074D803 /* CheckPass */ = {
 			isa = PBXGroup;
 			children = (
-				5CDCC0072AA6DC83000B59E4 /* Data */,
+				5C96B3272AA8C4EA00ECB985 /* Services */,
 				5CDCC0062AA6DC7D000B59E4 /* Model */,
 				5CDCC0052AA6DC77000B59E4 /* ViewModel */,
 				5CDCC0042AA6DC6C000B59E4 /* View */,
@@ -99,9 +133,19 @@
 			path = SignInView;
 			sourceTree = "<group>";
 		};
+		5C96B3272AA8C4EA00ECB985 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5CDCC0112AA6F48A000B59E4 /* AuthService.swift */,
+				5CD25D6E2AAA06780037B305 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5CDCC0042AA6DC6C000B59E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C0341E62AAB571D004D7E6A /* SignUpView */,
 				5C819FF12AA730BA001A5730 /* SignInView */,
 				5CDCC0152AA6FF17000B59E4 /* MainView */,
 			);
@@ -112,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */,
-				5CDCC0112AA6F48A000B59E4 /* AuthService.swift */,
+				5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -120,16 +164,9 @@
 		5CDCC0062AA6DC7D000B59E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5CDCC0072AA6DC83000B59E4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
 				5CDCC0082AA6DC90000B59E4 /* User.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5CDCC00C2AA6F46D000B59E4 /* Frameworks */ = {
@@ -167,6 +204,7 @@
 				5C76F0102AA60BA90074D803 /* FirebaseAnalytics */,
 				5CDCC00D2AA6F46D000B59E4 /* FirebaseAuth */,
 				5CDCC00F2AA6F46D000B59E4 /* FirebaseAuthCombine-Community */,
+				5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */,
 			);
 			productName = CheckPass;
 			productReference = 5C76EFFC2AA60A970074D803 /* CheckPass.app */;
@@ -230,9 +268,18 @@
 				5CDCC0172AA6FF26000B59E4 /* MainView.swift in Sources */,
 				5CDCC00B2AA6DD40000B59E4 /* AuthViewModel.swift in Sources */,
 				5C76F0022AA60A970074D803 /* ContentView.swift in Sources */,
+				5CD25D6F2AAA06780037B305 /* UserService.swift in Sources */,
 				5C76F0002AA60A970074D803 /* CheckPassApp.swift in Sources */,
+				5C0341E82AAB5729004D7E6A /* EmailInputView.swift in Sources */,
+				5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */,
+				5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */,
+				5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */,
 				5CDCC0092AA6DC90000B59E4 /* User.swift in Sources */,
+				5C0341EC2AAB6D07004D7E6A /* EmailInputStateView.swift in Sources */,
+				5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */,
+				5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */,
 				5CDCC0122AA6F48A000B59E4 /* AuthService.swift in Sources */,
+				5C0341EA2AAB622C004D7E6A /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +497,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		5CDCC00D2AA6F46D000B59E4 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

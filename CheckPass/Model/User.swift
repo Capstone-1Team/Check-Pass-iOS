@@ -8,7 +8,7 @@
 import Foundation
 
 struct User: Identifiable {
-    var id: String
+    var id: String    //Student Id or Professor Id
     var LACTURES: [String]
     var PROFILE_IMAGE: String
     var USER_NAME: String
@@ -20,4 +20,8 @@ enum UserType: String {
     case professor = "PROFESSOR"
     case staff = "STAFF"
     case unkown = "UNKOWN"
+    
+    static var userTypeList: [String] {
+        ["학생", "교수", "교직원"]
+    }
 }

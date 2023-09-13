@@ -36,7 +36,7 @@ struct UserService {
                 "USER_TYPE": userType
             ]
             
-            db.collection("UERS").document(userUID).setData(docData) { error in
+            db.collection("USERS").document(userUID).setData(docData) { error in
                 if let error = error {
                     promise(.failure(error))
                 } else {

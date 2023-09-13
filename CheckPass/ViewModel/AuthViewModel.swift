@@ -23,8 +23,9 @@ enum EmailInputState {
 final class AuthViewModel: ObservableObject {
     @Published var showSignInAlert: Bool = false
     @Published var showMainView: Bool = false
-    @Published var isProgress: Bool = false
+    @Published var isSignInProgress: Bool = false
     @Published var emailInputState: EmailInputState = .isBlank
+    @Published var isSignUpProgress: Bool = false
     //@Published var showSignUpError: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
@@ -40,18 +41,18 @@ extension AuthViewModel {
             return
         }
         
-        isProgress = true
+        isSignInProgress = true
         
         AuthService.authenticationSignIn(email, pw)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .failure(let error):
-                    self?.isProgress = false
+                    self?.isSignInProgress = false
                     self?.alertType = .notExsisting
                     self?.showSignInAlert = true
                     print("Sing In Error: ", error)
                 case .finished:
-                    self?.isProgress = false
+                    self?.isSignInProgress = false
                     self?.showMainView.toggle()
                     print("successfully signed in")
                 }
@@ -61,7 +62,9 @@ extension AuthViewModel {
             .store(in: &cancellables)
     }
     
-    func singUp(emailInput: String, pwInput: String, nameInput: String, userIdInput: String, selectedUserType: UserType) {
+    func singUp(emailInput: String, pwInput: String, nameInput: String, userIdInput: String, selectedUserType: String) {
+        isSignUpProgress = true
+        
         AuthService.createUser(emailInput, pwInput)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
@@ -73,12 +76,14 @@ extension AuthViewModel {
                 }
             }, receiveValue: { [weak self] in
                 if let userUid = Auth.auth().currentUser?.uid {
-                    UserService.createUser(userUID: userUid, userName: nameInput, userId: userIdInput, userType: selectedUserType.rawValue)
+                    UserService.createUser(userUID: userUid, userName: nameInput, userId: userIdInput, userType: selectedUserType)
                         .sink(receiveCompletion: { completion in
                             switch completion {
                             case .finished:
                                 print("successfully created New User Document")
+                                self?.isSignUpProgress = false
                             case .failure(let error):
+                                self?.isSignUpProgress = false
                                 print("Error: ", error)
                             }
                         }, receiveValue: {

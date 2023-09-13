@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct SignInView: View {
     @StateObject private var authViewModel: AuthViewModel = AuthViewModel()
@@ -19,11 +20,6 @@ struct SignInView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                if colorScheme == .dark {
-                    Color(red: 38 / 255, green: 38 / 255, blue: 40 / 255)
-                        .ignoresSafeArea()
-                }
-                
                 Circle()
                     .foregroundColor(.blue)
                     .frame(width: UIScreen.main.bounds.height * 0.3)
@@ -69,7 +65,7 @@ struct SignInView: View {
                     Button(action: {
                         authViewModel.signIn(email: emailInput, pw: passwordInput)
                     }, label: {
-                        if authViewModel.isProgress == true {
+                        if authViewModel.isSignInProgress == true {
                             ProgressView()
                                 .padding(.all, 15)
                                 .frame(maxWidth: .infinity)
@@ -119,6 +115,11 @@ struct SignInView: View {
                         return Alert(title: Text("알림"), message: Text("이메일과 비밀번호를 입력하세요."))
                     } else {
                         return Alert(title: Text("로그인 실패"), message: Text("존재하지 않는 아이디 이거나 비밀번호가 일치하지 않습니다."))
+                    }
+                }
+                .onAppear {
+                    if Auth.auth().currentUser != nil {
+                        authViewModel.showMainView = true
                     }
                 }
                 .padding()

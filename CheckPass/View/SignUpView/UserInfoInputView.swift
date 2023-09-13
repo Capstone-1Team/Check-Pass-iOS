@@ -85,13 +85,24 @@ struct UserInfoInputView: View {
                 ProgressBarView(page: 3.0)
                     .padding([.leading, .trailing])
                 
-                Button(action: {}, label: {
-                    Text("완료")
-                        .padding(.all, 15)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color.accentColor)
-                        .cornerRadius(15)
+                Button(action: {
+                    authViewModel.singUp(emailInput: emailInput, pwInput: passwordInput, nameInput: nameInput, userIdInput: idInput, selectedUserType: selectedUserType)
+                }, label: {
+                    if authViewModel.isSignUpProgress {
+                        ProgressView()
+                            .padding(.all, 15)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
+                    } else {
+                        Text("완료")
+                            .padding(.all, 15)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
+                    }
                 })
                 .disabled(nameInput.isEmpty || idInput.isEmpty)
                 .padding([.leading, .trailing, .bottom])

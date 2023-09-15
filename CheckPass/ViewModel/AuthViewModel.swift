@@ -62,6 +62,7 @@ extension AuthViewModel {
             .store(in: &cancellables)
     }
     
+    //MARK: - Sing Up Method
     func singUp(emailInput: String, pwInput: String, nameInput: String, userIdInput: String, selectedUserType: String) {
         isSignUpProgress = true
         
@@ -93,6 +94,18 @@ extension AuthViewModel {
                 }
             })
             .store(in: &cancellables)
+    }
+    
+    //MARK: - Sing Out Method
+    func signOut() {
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+            showMainView = false
+        } catch let signOutError as NSError {
+            print("Error : ", signOutError)
+        }
     }
 }
 

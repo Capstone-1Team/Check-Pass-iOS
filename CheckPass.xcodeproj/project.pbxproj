@@ -20,6 +20,8 @@
 		5C76F0072AA60A980074D803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F0062AA60A980074D803 /* Preview Assets.xcassets */; };
 		5C76F00E2AA60B4F0074D803 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */; };
 		5C76F0112AA60BA90074D803 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C76F0102AA60BA90074D803 /* FirebaseAnalytics */; };
+		5CABAE622AB1EFDD004501A6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABAE612AB1EFDD004501A6 /* MainView.swift */; };
+		5CABAE652AB1F05A004501A6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABAE642AB1F05A004501A6 /* SettingView.swift */; };
 		5CD25D6F2AAA06780037B305 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD25D6E2AAA06780037B305 /* UserService.swift */; };
 		5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */; };
 		5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */; };
@@ -29,7 +31,7 @@
 		5CDCC0102AA6F46D000B59E4 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 5CDCC00F2AA6F46D000B59E4 /* FirebaseAuthCombine-Community */; };
 		5CDCC0122AA6F48A000B59E4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0112AA6F48A000B59E4 /* AuthService.swift */; };
 		5CDCC0142AA6F929000B59E4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0132AA6F929000B59E4 /* SignInView.swift */; };
-		5CDCC0172AA6FF26000B59E4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0162AA6FF26000B59E4 /* MainView.swift */; };
+		5CDCC0172AA6FF26000B59E4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,13 +48,15 @@
 		5C76F0032AA60A980074D803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C76F0062AA60A980074D803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CABAE612AB1EFDD004501A6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5CABAE642AB1F05A004501A6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5CD25D6E2AAA06780037B305 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
 		5CDCC0082AA6DC90000B59E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5CDCC0112AA6F48A000B59E4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5CDCC0132AA6F929000B59E4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		5CDCC0162AA6FF26000B59E4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +146,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		5CABAE632AB1F04E004501A6 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				5CABAE642AB1F05A004501A6 /* SettingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
 		5CDCC0042AA6DC6C000B59E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CABAE632AB1F04E004501A6 /* SettingView */,
 				5C0341E62AAB571D004D7E6A /* SignUpView */,
 				5C819FF12AA730BA001A5730 /* SignInView */,
 				5CDCC0152AA6FF17000B59E4 /* MainView */,
@@ -179,7 +192,8 @@
 		5CDCC0152AA6FF17000B59E4 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				5CDCC0162AA6FF26000B59E4 /* MainView.swift */,
+				5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */,
+				5CABAE612AB1EFDD004501A6 /* MainView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -265,8 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CDCC0142AA6F929000B59E4 /* SignInView.swift in Sources */,
-				5CDCC0172AA6FF26000B59E4 /* MainView.swift in Sources */,
+				5CDCC0172AA6FF26000B59E4 /* MainTabView.swift in Sources */,
 				5CDCC00B2AA6DD40000B59E4 /* AuthViewModel.swift in Sources */,
+				5CABAE652AB1F05A004501A6 /* SettingView.swift in Sources */,
 				5C76F0022AA60A970074D803 /* ContentView.swift in Sources */,
 				5CD25D6F2AAA06780037B305 /* UserService.swift in Sources */,
 				5C76F0002AA60A970074D803 /* CheckPassApp.swift in Sources */,
@@ -275,6 +290,7 @@
 				5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */,
 				5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */,
 				5CDCC0092AA6DC90000B59E4 /* User.swift in Sources */,
+				5CABAE622AB1EFDD004501A6 /* MainView.swift in Sources */,
 				5C0341EC2AAB6D07004D7E6A /* EmailInputStateView.swift in Sources */,
 				5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */,
 				5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */,

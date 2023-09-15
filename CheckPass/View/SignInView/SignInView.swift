@@ -83,7 +83,8 @@ struct SignInView: View {
                     })
                     .padding([.top, .bottom])
                     .navigationDestination(isPresented: $authViewModel.showMainView) {
-                        MainView()
+                        MainTabView()
+                            .environmentObject(authViewModel)
                     }
                     
                     Divider()

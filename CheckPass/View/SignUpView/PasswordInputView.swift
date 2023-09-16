@@ -13,7 +13,6 @@ struct PasswordInputView: View {
     
     @State private var passwordInput: String = ""
     @State private var passwordCheckInput: String = ""
-    @State private var showPasswordInputView: Bool = false
     @Binding var emailInput: String
     
     var body: some View {
@@ -40,7 +39,7 @@ struct PasswordInputView: View {
                 ProgressBarView(page: 2.0)
                 
                 Button(action: {
-                    showPasswordInputView = true
+                    authViewModel.showUserInfoInputView = true
                 }, label: {
                     Text("다음")
                         .padding(.all, 15)
@@ -52,7 +51,7 @@ struct PasswordInputView: View {
                 .disabled(passwordInput != passwordCheckInput || passwordInput.isEmpty)
             }
             .padding()
-            .navigationDestination(isPresented: $showPasswordInputView, destination: {
+            .navigationDestination(isPresented: $authViewModel.showUserInfoInputView, destination: {
                 UserInfoInputView(emailInput: $emailInput, passwordInput: $passwordInput)
                     .environmentObject(authViewModel)
             })

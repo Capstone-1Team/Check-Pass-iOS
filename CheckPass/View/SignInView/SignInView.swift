@@ -92,9 +92,8 @@ struct SignInView: View {
                     
                     
                     HStack {
-                        NavigationLink(destination: {
-                            EmailInputView()
-                                .environmentObject(authViewModel)
+                        Button(action: {
+                            authViewModel.showEmailInputView = true
                         }, label: {
                             Text("새 계정 만들기")
                                 .foregroundColor(.gray)
@@ -111,6 +110,10 @@ struct SignInView: View {
                     
                     Spacer()
                 }
+                .navigationDestination(isPresented: $authViewModel.showEmailInputView, destination: {
+                    EmailInputView()
+                        .environmentObject(authViewModel)
+                })
                 .alert(isPresented: $authViewModel.showSignInAlert) {
                     if authViewModel.alertType == .isBlank {
                         return Alert(title: Text("알림"), message: Text("이메일과 비밀번호를 입력하세요."))

@@ -11,7 +11,7 @@ struct UserInfoInputView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    @State private var selectedUserType: String = ""
+    @State private var selectedUserType: String = "학생"
     @State private var nameInput: String = ""
     @State private var idInput: String = ""
     @Binding var emailInput: String
@@ -65,7 +65,7 @@ struct UserInfoInputView: View {
                     
                     Group {
                         HStack {
-                            Text("번호")
+                            Text("학번 / 교직원 번호")
                                 .bold()
                                 .font(.title)
                             

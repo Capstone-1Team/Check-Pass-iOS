@@ -12,7 +12,6 @@ struct EmailInputView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var emailInput: String = ""
-    @State private var showPasswordInputView: Bool = false
     @FocusState private var isFocused: Bool?
     
     var body: some View {
@@ -42,7 +41,7 @@ struct EmailInputView: View {
                 ProgressBarView(page: 1.0)
                 
                 Button(action: {
-                    showPasswordInputView = true
+                    authViewModel.showPasswordInputView = true
                 }, label: {
                     Text("다음")
                         .padding(.all, 15)
@@ -54,7 +53,7 @@ struct EmailInputView: View {
                 .disabled(authViewModel.emailInputState != .isValid)
             }
             .padding()
-            .navigationDestination(isPresented: $showPasswordInputView, destination: {
+            .navigationDestination(isPresented: $authViewModel.showPasswordInputView, destination: {
                 PasswordInputView(emailInput: $emailInput)
                     .environmentObject(authViewModel)
             })

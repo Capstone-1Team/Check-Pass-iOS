@@ -9,8 +9,39 @@ import SwiftUI
 import FirebaseAuth
 
 struct MainView: View {
+    @StateObject var userViewModel: UserViewModel = UserViewModel()
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        Text("로그인한 유저 uid : \(Auth.auth().currentUser?.uid ?? "")")
+        ScrollView {
+            VStack {
+                MainUserInfoVIew()
+                    .environmentObject(userViewModel)
+                    .padding(.bottom, 6)
+                
+                HStack {
+                    MainAttendanceCardView()
+                        .padding(.trailing, 3)
+                    
+                    MainAttendanceCardView()
+                        .padding(.leading, 3)
+                }
+                .padding(.bottom)
+            }
+            .padding([.leading, .trailing])
+        }
+        .safeAreaInset(edge: .top, content: {
+            HStack {
+                Text("CHECKPASS")
+                    .font(.largeTitle)
+                    .fontWeight(.medium)
+                    .padding(.leading)
+                
+                Spacer()
+            }
+            .padding([.top, .bottom])
+            .background(colorScheme == .light ? .white : .black)
+        })
     }
 }
 

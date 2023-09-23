@@ -23,6 +23,11 @@ struct MainTabView: View {
                     Image(systemName: "gearshape.fill")
                 }
         }
+        .onAppear {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
         .navigationBarBackButtonHidden(true)
     }
 }

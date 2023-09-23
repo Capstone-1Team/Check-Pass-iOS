@@ -8,11 +8,12 @@
 import Foundation
 
 struct User {
-    var ID: String    //Student Id or Professor Id
-    var LACTURES: [String]
+    var USER_NUMBER: String    //Student Id or Professor Id
+    var LECTURES: [String]
     var PROFILE_IMAGE: String
     var USER_NAME: String
     var USER_TYPE: UserType
+    var DEPARTMENT: [String]
 }
 
 enum UserType: String {
@@ -22,6 +23,6 @@ enum UserType: String {
     case unknown = "UNKNOWN"
     
     static var userTypeList: [String] {
-        ["학생", "교수", "교직원"]
+        ["구분을 선택해주세요", "학생", "교수", "교직원"]
     }
 }

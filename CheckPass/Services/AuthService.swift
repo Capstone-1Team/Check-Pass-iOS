@@ -1,5 +1,5 @@
 //
-//  AuthenticationService.swift
+//  AuthService.swift
 //  CheckPass
 //
 //  Created by 이정훈 on 2023/09/05.
@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct AuthService {
     /// sign in method for Existing User
-    static func authenticationSignIn(_ email: String, _ pw: String) -> AnyPublisher<Void, Error> {
+    static func signIn(_ email: String, _ pw: String) -> AnyPublisher<Void, Error> {
         return Future { promise in
             Auth.auth().signIn(withEmail: email, password: pw) { (_, error) in
                 if let error = error {

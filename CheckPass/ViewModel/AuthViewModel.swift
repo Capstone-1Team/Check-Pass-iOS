@@ -29,6 +29,7 @@ final class AuthViewModel: ObservableObject {
     @Published var showPasswordInputView: Bool = false
     @Published var showUserInfoInputView: Bool = false
     @Published var showEmailInputView: Bool = false
+    @Published var showUserDepartmentSelectionView: Bool = false
     //@Published var showSignUpError: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
@@ -46,7 +47,7 @@ extension AuthViewModel {
         
         isSignInProgress = true
         
-        AuthService.authenticationSignIn(email, pw)
+        AuthService.signIn(email, pw)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .failure(let error):
@@ -66,7 +67,7 @@ extension AuthViewModel {
     }
     
     //MARK: - Sing Up Method
-    func singUp(emailInput: String, pwInput: String, nameInput: String, userIdInput: String, selectedUserType: String) {
+    func singUp(emailInput: String, pwInput: String, nameInput: String, userNumInput: String, selectedUserType: String, selectedDepartment: [String]) {
         isSignUpProgress = true
         
         AuthService.createUser(emailInput, pwInput)
@@ -92,15 +93,17 @@ extension AuthViewModel {
                         userType = UserType.unknown.rawValue
                     }
                     
-                    UserService.createUser(userUID: userUid, userName: nameInput, userId: userIdInput, userType: userType)
+                    UserRepository.createUser(userUID: userUid, userName: nameInput, userNum: userNumInput, userType: userType, department: selectedDepartment)
                         .sink(receiveCompletion: { completion in
                             switch completion {
                             case .finished:
                                 print("successfully created New User Document")
                                 self?.isSignUpProgress = false
+                                self?.showUserDepartmentSelectionView = false
                                 self?.showUserInfoInputView = false
                                 self?.showPasswordInputView = false
-                                self?.showMainView.toggle()
+                                self?.showEmailInputView = false
+                                self?.showMainView = true
                             case .failure(let error):
                                 self?.isSignUpProgress = false
                                 print("Error: ", error)
@@ -120,7 +123,7 @@ extension AuthViewModel {
         
         do {
             try firebaseAuth.signOut()
-            showMainView.toggle()
+            showMainView = false
         } catch let signOutError as NSError {
             print("Error : ", signOutError)
         }

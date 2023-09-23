@@ -16,13 +16,18 @@ struct PasswordFieldView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            SecureField(title, text: $textInput)
-                .font(.title2)
-                .focused($isFocused, equals: true)
-            
-            Rectangle()
-                .frame(height: 1)
-                .foregroundColor(.gray)
+            HStack {
+                Image(systemName: "lock")
+                
+                SecureField(title, text: $textInput)
+                    .font(.title3)
+                    .focused($isFocused, equals: true)
+            }
+            .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
         }
         .onAppear {
             if keyboardFocus {

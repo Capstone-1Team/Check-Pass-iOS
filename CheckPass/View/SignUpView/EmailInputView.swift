@@ -21,24 +21,30 @@ struct EmailInputView: View {
                     .ignoresSafeArea()
             }
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading) {                
+//                PageStepVIew(step: 1)
+//                    .padding(.bottom)
+                
                 Text("이메일")
                     .bold()
-                    .font(.title)
-                
-                TextField("이메일을 입력하세요.", text: $emailInput)
                     .font(.title2)
-                    .focused($isFocused, equals: true)
                 
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(.gray)
+                HStack {
+                    Image(systemName: "envelope")
+                    
+                    TextField("이메일을 입력하세요.", text: $emailInput)
+                        .font(.title3)
+                        .focused($isFocused, equals: true)
+                }
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
                 
                 EmailInputStateView(emailInputState: $authViewModel.emailInputState)
                 
                 Spacer()
-                
-                ProgressBarView(page: 1.0)
                 
                 Button(action: {
                     authViewModel.showPasswordInputView = true
@@ -66,6 +72,8 @@ struct EmailInputView: View {
             .onChange(of: emailInput, perform: {
                 authViewModel.checkEmailInput($0)
             })
+            .navigationTitle("회원가입")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

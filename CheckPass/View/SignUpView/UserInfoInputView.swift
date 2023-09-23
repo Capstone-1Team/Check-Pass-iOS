@@ -11,9 +11,9 @@ struct UserInfoInputView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    @State private var selectedUserType: String = "학생"
+    @State private var selectedUserType: String = ""
     @State private var nameInput: String = ""
-    @State private var idInput: String = ""
+    @State private var userNumInput: String = ""
     @Binding var emailInput: String
     @Binding var passwordInput: String
     
@@ -26,67 +26,25 @@ struct UserInfoInputView: View {
             
             VStack {
                 ScrollView {
-                    Group {
-                        HStack {
-                            Text("구분")
-                                .bold()
-                                .font(.title)
-
-                            Spacer()
-                        }
-
-                        Picker("구분을 선택 해주세요.", selection: $selectedUserType) {
-                            ForEach(UserType.userTypeList, id:\.self) {
-                                Text($0)
-                            }
-                        }
-                        .pickerStyle(.wheel)
-                    }
-                    .padding([.leading, .trailing])
+//                    HStack {
+//                        PageStepVIew(step: 3)
+//                        
+//                        Spacer()
+//                    }
+//                    .padding([.leading, .trailing])
+                        
+                    UserTypeSelectionView(selectedUserType: $selectedUserType)
+                        .padding([.leading, .trailing, .bottom])
+                        
+                    UserNameInputView(nameInput: $nameInput)
+                        .padding([.leading, .trailing, .bottom])
                     
-                    Group {
-                        HStack {
-                            Text("이름")
-                                .bold()
-                                .font(.title)
-                            
-                            Spacer()
-                        }
-                        
-                        TextField("이름을 입력하세요.", text: $nameInput)
-                            .font(.title2)
-                        
-                        Rectangle()
-                            .frame(height: 1)
-                            .foregroundColor(.gray)
-                            .padding(.bottom)
-                    }
-                    .padding([.leading, .trailing])
-                    
-                    Group {
-                        HStack {
-                            Text("학번 / 교직원 번호")
-                                .bold()
-                                .font(.title)
-                            
-                            Spacer()
-                        }
-                        
-                        TextField("학번 또는 교직원 번호를 입력하세요.", text: $idInput)
-                            .font(.title2)
-                        
-                        Rectangle()
-                            .frame(height: 1)
-                            .foregroundColor(.gray)
-                    }
-                    .padding([.leading, .trailing])
+                    UserNumberInputView(idInput: $userNumInput)
+                        .padding([.leading, .trailing])
                 }
                 
-                ProgressBarView(page: 3.0)
-                    .padding([.leading, .trailing])
-                
                 Button(action: {
-                    authViewModel.singUp(emailInput: emailInput, pwInput: passwordInput, nameInput: nameInput, userIdInput: idInput, selectedUserType: selectedUserType)
+                    authViewModel.showUserDepartmentSelectionView = true
                 }, label: {
                     if authViewModel.isSignUpProgress {
                         ProgressView()
@@ -96,7 +54,7 @@ struct UserInfoInputView: View {
                             .background(Color.accentColor)
                             .cornerRadius(15)
                     } else {
-                        Text("완료")
+                        Text("다음")
                             .padding(.all, 15)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.white)
@@ -104,10 +62,16 @@ struct UserInfoInputView: View {
                             .cornerRadius(15)
                     }
                 })
-                .disabled(nameInput.isEmpty || idInput.isEmpty)
+                .disabled(nameInput.isEmpty || userNumInput.isEmpty || selectedUserType.isEmpty)
                 .padding([.leading, .trailing, .bottom])
             }
         }
+        .navigationTitle("회원가입")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $authViewModel.showUserDepartmentSelectionView, destination: {
+            UserDepartmentSelectionView(emailInput: $emailInput, passwordInput: $passwordInput, nameInput: $nameInput, userNumInput: $userNumInput, selectedUserType: $selectedUserType)
+                .environmentObject(authViewModel)
+        })
     }
 }
 

@@ -58,11 +58,17 @@ struct MainUserInfoVIew: View {
                         
                         if userViewModel.user?.USER_TYPE == .student {
                             Text("학번: \(userViewModel.user?.USER_NUMBER ?? "")")
+                                .font(.subheadline)
                         } else {
                             Text("교직원 번호: \(userViewModel.user?.USER_NUMBER ?? "")")
+                                .font(.subheadline)
                         }
                         
-                        Text("소속: \(userViewModel.user?.DEPARTMENT[0] ?? "") \(userViewModel.user?.DEPARTMENT[1] ?? "")")
+                        Text("소속: \(userViewModel.user?.DEPARTMENT[0] ?? "")")
+                            .font(.subheadline)
+                        
+                        Text("         \(userViewModel.user?.DEPARTMENT[1] ?? "")")
+                            .font(.subheadline)
                     }
                     
                     Spacer()

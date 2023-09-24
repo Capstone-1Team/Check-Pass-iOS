@@ -20,7 +20,7 @@ struct MainTabView: View {
             SettingView()
                 .environmentObject(authViewModel)
                 .tabItem {
-                    Image(systemName: "gearshape.fill")
+                    Image(systemName: "person.fill")
                 }
         }
         .onAppear {

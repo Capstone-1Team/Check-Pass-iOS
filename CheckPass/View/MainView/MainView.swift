@@ -20,20 +20,26 @@ struct MainView: View {
                     .padding(.bottom, 6)
                 
                 HStack {
-                    MainAttendanceCardView()
-                        .padding(.trailing, 3)
+                    NavigationLink(destination: {}, label: {
+                        MainAttendanceCardView(title: "비콘", colorFrom: .blue, colorTo: Color(red: 129 / 255, green: 39 / 255, blue: 228 / 255))
+                            .padding(.trailing, 3)
+                    })
                     
-                    MainAttendanceCardView()
-                        .padding(.leading, 3)
+                    NavigationLink(destination: {}, label: {
+                        MainAttendanceCardView(title: "전자", colorFrom: .blue, colorTo: .red)
+                            .padding(.leading, 3)
+                    })
                 }
-                .padding(.bottom)
+                .padding(.bottom, 6)
+                
+                AttendanceStatusView()
             }
             .padding([.leading, .trailing])
         }
         .safeAreaInset(edge: .top, content: {
             HStack {
                 Text("CHECKPASS")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.medium)
                     .padding(.leading)
                 

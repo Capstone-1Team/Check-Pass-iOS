@@ -33,7 +33,7 @@ class BeaconService: NSObject, CLLocationManagerDelegate {
         if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
             startScanning()
         } else {
-            print("monitorBeacons() - CLBeaconRegion can not monitoring")
+            print("monitorBeacons() - CLBeaconRegion can not monitor")
         }
     }
     

@@ -28,8 +28,6 @@ struct AttendanceStatusRowView: View {
                 Spacer()
                 
                 Text("지각: 0")
-                
-                Spacer()
             }
         }
     }

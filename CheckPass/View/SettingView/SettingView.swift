@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @Environment(\.colorScheme) var colorScheme
     
     @State private var showSignOutAlert: Bool = false
     
@@ -23,11 +24,24 @@ struct SettingView: View {
                 })
             }
         }
+        .listStyle(.plain)
         .alert(isPresented: $showSignOutAlert) {
             Alert(title: Text("알림"), message: Text("로그아웃 할까요?"), primaryButton: .destructive(Text("로그아웃"), action: {
                 authViewModel.signOut()
             }), secondaryButton: .cancel(Text("취소")))
         }
+        .safeAreaInset(edge: .top, content: {
+            HStack {
+                Text("더보기")
+                    .font(.title)
+                    .bold()
+                    .padding(.leading)
+                
+                Spacer()
+            }
+            .padding([.top, .bottom])
+            .background(colorScheme == .light ? .white : .black)
+        })
     }
 }
 

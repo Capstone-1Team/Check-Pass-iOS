@@ -15,12 +15,30 @@ struct MainTabView: View {
             MainView()
                 .tabItem {
                     Image(systemName: "house.fill")
+                    
+                    Text("홈")
+                }
+            
+            LectureListView()
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    
+                    Text("강의")
+                }
+            
+            SearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    
+                    Text("검색")
                 }
             
             SettingView()
                 .environmentObject(authViewModel)
                 .tabItem {
-                    Image(systemName: "person.fill")
+                    Image(systemName: "ellipsis")
+                    
+                    Text("더보기")
                 }
         }
         .onAppear {

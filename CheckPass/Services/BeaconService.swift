@@ -7,23 +7,29 @@
 
 import CoreLocation
 
+typealias BeaconInfo = (String, Int, Int)
+
 class BeaconService: NSObject, CLLocationManagerDelegate {
-    private var locationManager: CLLocationManager    //앱에 대한 위치 관련 이벤트 전달을 시작하고 중지하도록 하는 인스턴스
+    @Published var detectedBeaconInfo: BeaconInfo = ("", 0, 0)
     
-    override init() {
+    private var detectedBeaconList: [BeaconInfo] = []
+    private var locationManager: CLLocationManager    //앱에 대한 위치 관련 이벤트 전달을 시작하고 중지하도록 하는 인스턴스
+    private var beaconUUIDList: [String]
+    
+    init(_ beaconUUIDList: [String]) {
         locationManager = CLLocationManager()
+        self.beaconUUIDList = beaconUUIDList
         
         super.init()
         locationManager.delegate = self    //delegate로 위임
         locationManager.requestAlwaysAuthorization()    //위치 권한 요청
-        
         locationManager.startUpdatingLocation()    //위치 업데이트 시작
     }
     
     //MARK: - 위치 권한이 업데이트 되거나 Location Manager가 생성될때 delegate로 호출되는 메서드
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
-            self.monitorBeacons()
+            monitorBeacons()
         }
     }
     
@@ -31,15 +37,17 @@ class BeaconService: NSObject, CLLocationManagerDelegate {
     func monitorBeacons() {
         //CLLocationManager가 CLBeaconRegion을 모니터링 할 수 있는지 확인
         if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-            startScanning()
+            for uuid in beaconUUIDList {
+                startScanning(for: uuid)
+            }
         } else {
             print("monitorBeacons() - CLBeaconRegion can not monitor")
         }
     }
     
-    func startScanning() {
-        let uuid: UUID = UUID(uuidString: "FE850A83-6660-4792-B2CF-886689B32552")!
-        let beaconRegion: CLBeaconRegion = CLBeaconRegion(uuid: uuid, identifier: "beacon1")
+    func startScanning(for uuid: String) {
+        let uuid: UUID = UUID(uuidString: uuid)!
+        let beaconRegion: CLBeaconRegion = CLBeaconRegion(uuid: uuid, identifier: uuid.uuidString)
         let beaconConstraint: CLBeaconIdentityConstraint = CLBeaconIdentityConstraint(uuid: uuid)
         
         //범위에서 벗어나면 notification 발생
@@ -53,26 +61,41 @@ class BeaconService: NSObject, CLLocationManagerDelegate {
     
     //MARK: - Beacon 모니터링 시작하면 매초 수행할 함수
     func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) {
-        //탐지한 beacon이 있다면
+        //탐지한 beacon이 있다면 beacons는 신호 강도가 가장 강한 순으로 정렬됨
         if beacons.count > 0 {
-            let targetBeacon: CLBeacon = beacons[0]    //beacons는 신호 강도가 가장 강한 순으로 정렬됨
-            
-            switch targetBeacon.proximity {
-            case .unknown:
-                //beacon과 사용자의 접근 거리를 정확히 파악할 수 없는 경우
-                print("proximity: unkown")
-            case .far:
-                //beacon과 사용자의 접근 거리가 먼 경우
-                print("proximity: far")
-            case .near:
-                //beacon과 사용자의 접근 거리가 가까운 경우
-                print("proximity: near")
-            case .immediate:
-                //beacon과 사용자가 바로 근처에 있는 경우
-                print("poximity: immediate")
-            @unknown case _:
-                //그 외의 데이터가 전달되는 경우
-                print("unkown data")
+            for beacon in beacons {
+                let beaconInfo: BeaconInfo = (beacon.uuid.uuidString, beacon.major.intValue, beacon.minor.intValue)
+                let isContain: Bool = detectedBeaconList.contains { (element) -> Bool in
+                    if element == beaconInfo {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                
+                switch beacon.proximity {
+                case .unknown:
+                    //beacon과 사용자의 접근 거리를 정확히 파악할 수 없는 경우
+                    print("[\(beacon.major.intValue), \(beacon.minor.intValue)] proximity: unkown")
+                case .far:
+                    //beacon과 사용자의 접근 거리가 먼 경우
+                    print("[\(beacon.major.intValue), \(beacon.minor.intValue)] proximity: far")
+                    
+                    if !isContain {
+                        detectedBeaconList.append(beaconInfo)
+                        detectedBeaconInfo = beaconInfo
+                    }
+                case .near:
+                    //beacon과 사용자의 접근 거리가 가까운 경우
+                    print("[\(beacon.major.intValue), \(beacon.minor.intValue)] proximity: near")
+                    
+                case .immediate:
+                    //beacon과 사용자가 바로 근처에 있는 경우
+                    print("[\(beacon.major.intValue), \(beacon.minor.intValue)] poximity: immediate")
+                @unknown case _:
+                    //그 외의 데이터가 전달되는 경우
+                    print("[\(beacon.major.intValue), \(beacon.minor.intValue)] unkown data")
+                }
             }
         } else {
             print("locationManager(_:didRangeBeacons:in:) - CLBeacon not found")

@@ -25,14 +25,7 @@ struct UserInfoInputView: View {
             }
             
             VStack {
-                ScrollView {
-//                    HStack {
-//                        PageStepVIew(step: 3)
-//                        
-//                        Spacer()
-//                    }
-//                    .padding([.leading, .trailing])
-                        
+                ScrollView {                        
                     UserTypeSelectionView(selectedUserType: $selectedUserType)
                         .padding([.leading, .trailing, .bottom])
                         

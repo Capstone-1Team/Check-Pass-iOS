@@ -23,18 +23,23 @@ struct PasswordInputView: View {
             }
             
             VStack(alignment: .leading) {
-//                PageStepVIew(step: 2)
-//                    .padding(.bottom)
                 
                 Text("비밀번호")
                     .bold()
                     .font(.title2)
                 
-                PasswordFieldView(textInput: $passwordInput, title: "비밀번호는 6자리 이상 가능합니다.", keyboardFocus: true)
+                PasswordFieldView(textInput: $passwordInput, title: "비밀번호를 입력하세요", keyboardFocus: true)
                 
-                PasswordFieldView(textInput: $passwordCheckInput, title: "비밀번호를 다시 확인합니다.", keyboardFocus: false)
+                PasswordInputStateView(passwordInput: $passwordInput, passwordInputState: $authViewModel.passwordInputState)
+                    .padding(.bottom)
                 
-                PasswordInputStateView(passwordInput: $passwordInput, passwordInputCheck: $passwordCheckInput)
+                Text("비밀번호 확인")
+                    .bold()
+                    .font(.title2)
+                
+                PasswordFieldView(textInput: $passwordCheckInput, title: "비밀번호를 다시 확인합니다", keyboardFocus: false)
+                
+                PasswordConfirmInputStateView(passwordInput: $passwordInput, passwordConfirmInput: $passwordCheckInput)
                 
                 Spacer()
                 
@@ -55,8 +60,9 @@ struct PasswordInputView: View {
                 UserInfoInputView(emailInput: $emailInput, passwordInput: $passwordInput)
                     .environmentObject(authViewModel)
             })
-            .navigationTitle("회원가입")
-            .navigationBarTitleDisplayMode(.inline)
+            .onChange(of: passwordInput, perform: {
+                authViewModel.checkPasswordInput(for: $0)
+            })
         }
     }
 }

@@ -12,7 +12,9 @@ struct EmailInputView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var emailInput: String = ""
-    @FocusState private var isFocused: Bool?
+    @State private var isKeyboardVisible = false
+    @State private var showInvaildEmailAlert: Bool = false
+    @State private var showExistingEmailAlert: Bool = false
     
     var body: some View {
         ZStack {
@@ -20,60 +22,87 @@ struct EmailInputView: View {
                 Color(red: 38 / 255, green: 38 / 255, blue: 40 / 255)
                     .ignoresSafeArea()
             }
+
+            Image("signupimage")
+                .resizable()
+                .frame(maxWidth: .infinity)
+                .frame(height: UIScreen.main.bounds.width * 0.8)
+                .offset(y: -120)
             
-            VStack(alignment: .leading) {                
-//                PageStepVIew(step: 1)
-//                    .padding(.bottom)
+            VStack(alignment: .leading, spacing: 16) {
                 
-                Text("이메일")
-                    .bold()
-                    .font(.title2)
+                if !isKeyboardVisible {
+                    Text("출석 체크를 간편하게!")
+                        .bold()
+                        .font(.title)
+                    
+                    Text("어디서든 쉽게 이용하세요")
+                        .bold()
+                        .font(.title2)
+                }
+                
+                Spacer()
                 
                 HStack {
                     Image(systemName: "envelope")
                     
                     TextField("이메일을 입력하세요.", text: $emailInput)
                         .font(.title3)
-                        .focused($isFocused, equals: true)
                 }
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
                 
-                EmailInputStateView(emailInputState: $authViewModel.emailInputState)
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.gray)
                 
-                Spacer()
+                Text("회원가입 시 체크패스 서비스 이용 약관과 개인정보 보호 정책에 동의하게 됩니다.")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .alert(isPresented: $showExistingEmailAlert, content: {
+                        Alert(title: Text("이미 존재하는 이메일입니다."))
+                    })
                 
                 Button(action: {
-                    authViewModel.showPasswordInputView = true
+                    if authViewModel.emailInputState == .isExist {
+                        showExistingEmailAlert = true
+                    } else if authViewModel.emailInputState == .isIncorrectForm {
+                        showInvaildEmailAlert = true
+                    } else {
+                        authViewModel.showPasswordInputView = true
+                    }
                 }, label: {
                     Text("다음")
                         .padding(.all, 15)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.white)
                         .background(Color.accentColor)
-                        .cornerRadius(15)
+                        .cornerRadius(10)
                 })
-                .disabled(authViewModel.emailInputState != .isValid)
+                .disabled(authViewModel.emailInputState == .isBlank)
+                .alert(isPresented: $showInvaildEmailAlert, content: {
+                    Alert(title: Text("이메일 형식이 맞지 않습니다."))
+                })
             }
             .padding()
             .navigationDestination(isPresented: $authViewModel.showPasswordInputView, destination: {
                 PasswordInputView(emailInput: $emailInput)
                     .environmentObject(authViewModel)
             })
-            .onAppear {
-                isFocused = true
-            }
             .onDisappear {
                 authViewModel.emailInputState = .isBlank
             }
             .onChange(of: emailInput, perform: {
                 authViewModel.checkEmailInput($0)
             })
-            .navigationTitle("회원가입")
-            .navigationBarTitleDisplayMode(.inline)
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
+                withAnimation(.easeInOut) {
+                    self.isKeyboardVisible = true
+                }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { notification in
+                withAnimation(.easeInOut) {
+                    self.isKeyboardVisible = false
+                }
+            }
         }
     }
 }

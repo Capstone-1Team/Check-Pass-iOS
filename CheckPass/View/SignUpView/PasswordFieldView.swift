@@ -15,7 +15,7 @@ struct PasswordFieldView: View {
     var keyboardFocus: Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 16) {
             HStack {
                 Image(systemName: "lock")
                 
@@ -23,11 +23,10 @@ struct PasswordFieldView: View {
                     .font(.title3)
                     .focused($isFocused, equals: true)
             }
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray)
         }
         .onAppear {
             if keyboardFocus {

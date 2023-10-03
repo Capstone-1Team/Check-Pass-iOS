@@ -22,11 +22,12 @@ struct UserNameInputView: View {
                 TextField("이름을 입력하세요.", text: $nameInput)
                     .font(.title3)
             }
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
+            .padding([.bottom, .top], 10)
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray)
+                .padding(.bottom)
         }
     }
 }

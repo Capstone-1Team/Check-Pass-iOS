@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-let colleges: [String] = ["선택", "융합기술대학", "공과대학", "인문사회대학", "보건생명대학", "철도대학", "미래융합대학", "교양학부", "자유전공학부", "창의융합학부"]
-let departments: [String: [String]] = ["선택": ["선택"], "융합기술대학": ["선택", "기계공학과", "자동차공학과", "항공·기계설계학과", "전기공학과", "전자공학과", "컴퓨터공학과", "컴퓨터소프트웨어학과", "AI로봇공학과", "바이오메디컬융합학과", "정밀의료·의료기기학과"]]
+let colleges: [String] = ["단과대를 선택하세요", "융합기술대학", "공과대학", "인문사회대학", "보건생명대학", "철도대학", "미래융합대학", "교양학부", "자유전공학부", "창의융합학부"]
+let departments: [String: [String]] = ["단과대를 선택하세요": ["학과를 선택하세요"], "융합기술대학": ["학과를 선택하세요", "기계공학과", "자동차공학과", "항공·기계설계학과", "전기공학과", "전자공학과", "컴퓨터공학과", "컴퓨터소프트웨어학과", "AI로봇공학과", "바이오메디컬융합학과", "정밀의료·의료기기학과"]]
 
 struct UserDepartmentSelectionView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     
-    @State private var selectedCollege: String = "선택"
-    @State private var selectedDepartment: String = "선택"
+    @State private var selectedCollege: String = "단과대를 선택하세요"
+    @State private var selectedDepartment: String = "학과를 선택하세요"
     @Binding var emailInput: String
     @Binding var passwordInput: String
     @Binding var nameInput: String
@@ -22,20 +22,14 @@ struct UserDepartmentSelectionView: View {
     @Binding var selectedUserType: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-//            PageStepVIew(step: 4)
-//                .padding(.bottom)
-            
-            Text("소속")
+        VStack(alignment: .leading, spacing: 16) {            
+            Text("단과대")
                 .bold()
                 .font(.title2)
             
             HStack {
                 Image(systemName: "building.columns.fill")
-                
-                Text("단과대")
-                
-                Spacer()
+                    .padding(.trailing, -10)
                 
                 Picker("단과대", selection: $selectedCollege) {
                     ForEach(colleges, id:\.self) {
@@ -43,30 +37,31 @@ struct UserDepartmentSelectionView: View {
                     }
                 }
             }
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray)
+                .padding(.bottom)
+            
+            Text("학과")
+                .bold()
+                .font(.title2)
             
             HStack {
                 Image(systemName: "graduationcap")
-                
-                Text("학과")
-                
-                Spacer()
-                
+                    .padding(.trailing, -10)
+
                 Picker("학과", selection: $selectedDepartment) {
                     ForEach(departments[selectedCollege] ?? ["선택"], id:\.self) {
                         Text($0)
                     }
                 }
             }
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.gray, lineWidth: 1)
-            )
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray)
+                .padding(.bottom)
             
             Spacer()
             
@@ -89,7 +84,7 @@ struct UserDepartmentSelectionView: View {
                         .cornerRadius(15)
                 }
             })
-            .disabled(selectedDepartment == "선택" || selectedCollege == "선택")
+            .disabled(selectedDepartment == "학과를 선택하세요" || selectedCollege == "단과대를 선택하세요")
         }
         .padding()
     }

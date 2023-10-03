@@ -22,11 +22,12 @@ struct UserNumberInputView: View {
                 TextField("학번 또는 교직원 번호를 입력하세요.", text: $idInput)
                     .font(.title3)
             }
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
+            .padding([.bottom, .top], 10)
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray)
+                .padding(.bottom)
         }
     }
 }

@@ -20,11 +20,18 @@ enum EmailInputState {
     case isValid
 }
 
+enum PasswordInputState {
+    case isBlank
+    case isInvalid
+    case isValid
+}
+
 final class AuthViewModel: ObservableObject {
     @Published var showSignInAlert: Bool = false
     @Published var showMainView: Bool = false
     @Published var isSignInProgress: Bool = false
     @Published var emailInputState: EmailInputState = .isBlank
+    @Published var passwordInputState: PasswordInputState = .isBlank
     @Published var isSignUpProgress: Bool = false
     @Published var showPasswordInputView: Bool = false
     @Published var showUserInfoInputView: Bool = false
@@ -152,6 +159,19 @@ extension AuthViewModel {
                     self?.emailInputState = $0
                 })
                 .store(in: &cancellables)
+        }
+    }
+    
+    func checkPasswordInput(for passwordInput: String) {
+        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{6,16}"
+        let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        
+        if passwordInput.isEmpty {
+            passwordInputState = .isBlank
+        } else if passwordPredicate.evaluate(with: passwordInput) {
+            passwordInputState = .isValid
+        } else {
+            passwordInputState = .isInvalid
         }
     }
 }

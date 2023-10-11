@@ -59,8 +59,6 @@ struct UserInfoInputView: View {
                 .padding([.leading, .trailing, .bottom])
             }
         }
-        .navigationTitle("회원가입")
-        .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $authViewModel.showUserDepartmentSelectionView, destination: {
             UserDepartmentSelectionView(emailInput: $emailInput, passwordInput: $passwordInput, nameInput: $nameInput, userNumInput: $userNumInput, selectedUserType: $selectedUserType)
                 .environmentObject(authViewModel)

@@ -21,13 +21,19 @@ struct EmailInputView: View {
             if colorScheme == .dark {
                 Color(red: 38 / 255, green: 38 / 255, blue: 40 / 255)
                     .ignoresSafeArea()
+                
+                Image("signupimage_dark")
+                    .resizable()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.width * 0.7)
+                    .offset(y: -120)
+            } else {
+                Image("signupimage_light")
+                    .resizable()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.width * 0.7)
+                    .offset(x: -UIScreen.main.bounds.width * 0.04, y: -120)
             }
-
-            Image("signupimage")
-                .resizable()
-                .frame(maxWidth: .infinity)
-                .frame(height: UIScreen.main.bounds.width * 0.8)
-                .offset(y: -120)
             
             VStack(alignment: .leading, spacing: 16) {
                 

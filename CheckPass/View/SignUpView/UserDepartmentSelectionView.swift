@@ -12,6 +12,7 @@ let departments: [String: [String]] = ["단과대를 선택하세요": ["학과�
 
 struct UserDepartmentSelectionView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @Environment(\.colorScheme) var colorScheme
     
     @State private var selectedCollege: String = "단과대를 선택하세요"
     @State private var selectedDepartment: String = "학과를 선택하세요"
@@ -22,71 +23,86 @@ struct UserDepartmentSelectionView: View {
     @Binding var selectedUserType: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {            
-            Text("단과대")
-                .bold()
-                .font(.title2)
+        ZStack {
+            if colorScheme == . dark {
+                Color(red: 38 / 255, green: 38 / 255, blue: 40 / 255)
+                    .ignoresSafeArea()
+            }
             
-            HStack {
-                Image(systemName: "building.columns.fill")
-                    .padding(.trailing, -10)
+            VStack(alignment: .leading, spacing: 16) {
+                Text("거의 다 끝났어요!")
+                    .bold()
+                    .font(.title)
+                    .padding(.bottom, -10)
                 
-                Picker("단과대", selection: $selectedCollege) {
-                    ForEach(colleges, id:\.self) {
-                        Text($0)
+                Text("곧 CHECKPASS를 사용할 수 있어요")
+                    .bold()
+                    .font(.title2)
+                
+                Spacer()
+                
+                Image("departmentSelectionImage_light")
+                    .resizable()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.width * 0.8)
+                
+                Spacer()
+                
+                HStack {
+                    Image(systemName: "building.columns.fill")
+                        .padding(.trailing, -10)
+                    
+                    Picker("단과대", selection: $selectedCollege) {
+                        ForEach(colleges, id:\.self) {
+                            Text($0)
+                        }
                     }
                 }
-            }
-            
-            Rectangle()
-                .frame(height: 1)
-                .foregroundColor(.gray)
-                .padding(.bottom)
-            
-            Text("학과")
-                .bold()
-                .font(.title2)
-            
-            HStack {
-                Image(systemName: "graduationcap")
-                    .padding(.trailing, -10)
-
-                Picker("학과", selection: $selectedDepartment) {
-                    ForEach(departments[selectedCollege] ?? ["선택"], id:\.self) {
-                        Text($0)
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.gray)
+                    .padding(.bottom)
+                
+                HStack {
+                    Image(systemName: "graduationcap")
+                        .padding(.trailing, -10)
+                    
+                    Picker("학과", selection: $selectedDepartment) {
+                        ForEach(departments[selectedCollege] ?? ["선택"], id:\.self) {
+                            Text($0)
+                        }
                     }
                 }
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.gray)
+                    .padding(.bottom)
+                
+                Button(action: {
+                    authViewModel.singUp(emailInput: emailInput, pwInput: passwordInput, nameInput: nameInput, userNumInput: userNumInput, selectedUserType: selectedUserType, selectedDepartment: [selectedCollege, selectedDepartment])
+                }, label: {
+                    if authViewModel.isSignUpProgress {
+                        ProgressView()
+                            .padding(.all, 15)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
+                    } else {
+                        Text("완료")
+                            .padding(.all, 15)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
+                    }
+                })
+                .disabled(selectedDepartment == "학과를 선택하세요" || selectedCollege == "단과대를 선택하세요")
             }
-            
-            Rectangle()
-                .frame(height: 1)
-                .foregroundColor(.gray)
-                .padding(.bottom)
-            
-            Spacer()
-            
-            Button(action: {
-                authViewModel.singUp(emailInput: emailInput, pwInput: passwordInput, nameInput: nameInput, userNumInput: userNumInput, selectedUserType: selectedUserType, selectedDepartment: [selectedCollege, selectedDepartment])
-            }, label: {
-                if authViewModel.isSignUpProgress {
-                    ProgressView()
-                        .padding(.all, 15)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color.accentColor)
-                        .cornerRadius(15)
-                } else {
-                    Text("완료")
-                        .padding(.all, 15)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color.accentColor)
-                        .cornerRadius(15)
-                }
-            })
-            .disabled(selectedDepartment == "학과를 선택하세요" || selectedCollege == "단과대를 선택하세요")
+            .padding()
         }
-        .padding()
     }
 }
 

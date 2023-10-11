@@ -20,13 +20,15 @@ struct MainView: View {
                     .padding(.bottom, 6)
                 
                 HStack {
-                    NavigationLink(destination: {}, label: {
+                    NavigationLink(destination: {
+                        DetectedLectureListView()
+                    }, label: {
                         MainAttendanceCardView(title: "비콘", colorFrom: .blue, colorTo: Color(red: 129 / 255, green: 39 / 255, blue: 228 / 255))
                             .padding(.trailing, 3)
                     })
                     
                     NavigationLink(destination: {}, label: {
-                        MainAttendanceCardView(title: "전자", colorFrom: .blue, colorTo: .red)
+                        MainAttendanceCardView(title: "전자", colorFrom: .blue, colorTo: Color(red: 0 / 255, green: 180 / 255, blue: 219 / 255))
                             .padding(.leading, 3)
                     })
                 }
@@ -45,7 +47,7 @@ struct MainView: View {
                 
                 Spacer()
             }
-            .padding([.top, .bottom])
+            .padding([.top, .bottom], 8)
             .background(colorScheme == .light ? .white : .black)
         })
     }

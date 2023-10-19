@@ -9,31 +9,36 @@
 /* Begin PBXBuildFile section */
 		5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */; };
 		5C0341E82AAB5729004D7E6A /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E72AAB5729004D7E6A /* EmailInputView.swift */; };
-		5C0341EA2AAB622C004D7E6A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E92AAB622C004D7E6A /* ProgressBarView.swift */; };
-		5C0341EC2AAB6D07004D7E6A /* EmailInputStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341EB2AAB6D07004D7E6A /* EmailInputStateView.swift */; };
-		5C0763352ABB3315002ABE82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0763342ABB3315002ABE82 /* ContentView.swift */; };
 		5C11A6FD2ABFE3CC0034D4FE /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A6FC2ABFE3CC0034D4FE /* AttendanceStatusView.swift */; };
 		5C11A6FF2ABFE6400034D4FE /* AttendanceStatusRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */; };
+		5C4581792AC320DB0003B3B6 /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4581782AC320DB0003B3B6 /* BeaconService.swift */; };
+		5C45817B2AC326470003B3B6 /* ScannedLecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */; };
+		5C45817D2AC32A3A0003B3B6 /* ScannedLectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45817C2AC32A3A0003B3B6 /* ScannedLectureListView.swift */; };
 		5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729372AAD871F007CA69B /* PasswordInputView.swift */; };
 		5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */; };
 		5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */; };
-		5C6C88FE2AB694F300F29F77 /* PageStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C88FD2AB694F300F29F77 /* PageStepView.swift */; };
 		5C6C89002AB69C5100F29F77 /* MainUserInfoVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C88FF2AB69C5100F29F77 /* MainUserInfoVIew.swift */; };
 		5C6C89022AB6CDE100F29F77 /* MainAttendanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C89012AB6CDE100F29F77 /* MainAttendanceCardView.swift */; };
+		5C6EA5512ACC575D00FC4742 /* PasswordConfirmInputStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EA5502ACC575D00FC4742 /* PasswordConfirmInputStateView.swift */; };
 		5C76F0002AA60A970074D803 /* CheckPassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76EFFF2AA60A970074D803 /* CheckPassApp.swift */; };
 		5C76F0042AA60A980074D803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F0032AA60A980074D803 /* Assets.xcassets */; };
 		5C76F0072AA60A980074D803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F0062AA60A980074D803 /* Preview Assets.xcassets */; };
 		5C76F00E2AA60B4F0074D803 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */; };
 		5C76F0112AA60BA90074D803 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C76F0102AA60BA90074D803 /* FirebaseAnalytics */; };
+		5C81B09B2ACB08D6007E8D34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B09A2ACB08D6007E8D34 /* ContentView.swift */; };
 		5C849F452AB97A8100FCA4D0 /* UserNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C849F442AB97A8100FCA4D0 /* UserNumberInputView.swift */; };
 		5C849F472AB97AF100FCA4D0 /* UserNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C849F462AB97AF100FCA4D0 /* UserNameInputView.swift */; };
 		5C849F492AB97B9200FCA4D0 /* UserTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C849F482AB97B9200FCA4D0 /* UserTypeSelectionView.swift */; };
 		5C849F4B2AB9916C00FCA4D0 /* UserDepartmentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C849F4A2AB9916C00FCA4D0 /* UserDepartmentSelectionView.swift */; };
 		5CABAE622AB1EFDD004501A6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABAE612AB1EFDD004501A6 /* MainView.swift */; };
 		5CABAE652AB1F05A004501A6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABAE642AB1F05A004501A6 /* SettingView.swift */; };
+		5CC5C6ED2AC473E000DCF499 /* LectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5C6EC2AC473E000DCF499 /* LectureListView.swift */; };
+		5CC5C6F02AC474B800DCF499 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5C6EF2AC474B800DCF499 /* SearchView.swift */; };
+		5CC5C6F22AC479C500DCF499 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5C6F12AC479C500DCF499 /* FlagView.swift */; };
 		5CD25D6F2AAA06780037B305 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD25D6E2AAA06780037B305 /* UserRepository.swift */; };
 		5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */; };
 		5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */; };
+		5CD3E4112AC5807B0028FC67 /* BeaconsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3E4102AC5807B0028FC67 /* BeaconsRepository.swift */; };
 		5CDCC0092AA6DC90000B59E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0082AA6DC90000B59E4 /* User.swift */; };
 		5CDCC00B2AA6DD40000B59E4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */; };
 		5CDCC00E2AA6F46D000B59E4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5CDCC00D2AA6F46D000B59E4 /* FirebaseAuth */; };
@@ -42,41 +47,54 @@
 		5CDCC0142AA6F929000B59E4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0132AA6F929000B59E4 /* SignInView.swift */; };
 		5CDCC0172AA6FF26000B59E4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */; };
 		5CE02B1C2AB89662008F5B44 /* UserTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE02B1B2AB89662008F5B44 /* UserTypePicker.swift */; };
+		5CF62AEB2AC94B51004E13A0 /* LectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF62AEA2AC94B51004E13A0 /* LectureRepository.swift */; };
+		5CF62AED2AC94C35004E13A0 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF62AEC2AC94C35004E13A0 /* Lecture.swift */; };
+		5CF62AEF2AC95511004E13A0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF62AEE2AC95511004E13A0 /* FirebaseFirestoreSwift */; };
+		5CF62AF12AC960AC004E13A0 /* ScannedLectureListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF62AF02AC960AC004E13A0 /* ScannedLectureListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		5C0341E72AAB5729004D7E6A /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
-		5C0341E92AAB622C004D7E6A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
-		5C0341EB2AAB6D07004D7E6A /* EmailInputStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputStateView.swift; sourceTree = "<group>"; };
-		5C0763342ABB3315002ABE82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C11A6FC2ABFE3CC0034D4FE /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusRowView.swift; sourceTree = "<group>"; };
+		5C4581782AC320DB0003B3B6 /* BeaconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
+		5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLecturesViewModel.swift; sourceTree = "<group>"; };
+		5C45817C2AC32A3A0003B3B6 /* ScannedLectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLectureListView.swift; sourceTree = "<group>"; };
 		5C6729372AAD871F007CA69B /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
 		5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputStateView.swift; sourceTree = "<group>"; };
-		5C6C88FD2AB694F300F29F77 /* PageStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStepView.swift; sourceTree = "<group>"; };
 		5C6C88FF2AB69C5100F29F77 /* MainUserInfoVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserInfoVIew.swift; sourceTree = "<group>"; };
 		5C6C89012AB6CDE100F29F77 /* MainAttendanceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAttendanceCardView.swift; sourceTree = "<group>"; };
+		5C6EA5502ACC575D00FC4742 /* PasswordConfirmInputStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmInputStateView.swift; sourceTree = "<group>"; };
 		5C76EFFC2AA60A970074D803 /* CheckPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C76EFFF2AA60A970074D803 /* CheckPassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPassApp.swift; sourceTree = "<group>"; };
 		5C76F0032AA60A980074D803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C76F0062AA60A980074D803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C81B09A2ACB08D6007E8D34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C849F442AB97A8100FCA4D0 /* UserNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNumberInputView.swift; sourceTree = "<group>"; };
 		5C849F462AB97AF100FCA4D0 /* UserNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameInputView.swift; sourceTree = "<group>"; };
 		5C849F482AB97B9200FCA4D0 /* UserTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeSelectionView.swift; sourceTree = "<group>"; };
 		5C849F4A2AB9916C00FCA4D0 /* UserDepartmentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDepartmentSelectionView.swift; sourceTree = "<group>"; };
 		5CABAE612AB1EFDD004501A6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5CABAE642AB1F05A004501A6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		5CC5C6EC2AC473E000DCF499 /* LectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListView.swift; sourceTree = "<group>"; };
+		5CC5C6EF2AC474B800DCF499 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		5CC5C6F12AC479C500DCF499 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		5CD25D6E2AAA06780037B305 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
+		5CD3E40F2AC57D340028FC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5CD3E4102AC5807B0028FC67 /* BeaconsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsRepository.swift; sourceTree = "<group>"; };
 		5CDCC0082AA6DC90000B59E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5CDCC0112AA6F48A000B59E4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5CDCC0132AA6F929000B59E4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5CE02B1B2AB89662008F5B44 /* UserTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypePicker.swift; sourceTree = "<group>"; };
+		5CF62AEA2AC94B51004E13A0 /* LectureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRepository.swift; sourceTree = "<group>"; };
+		5CF62AEC2AC94C35004E13A0 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		5CF62AF02AC960AC004E13A0 /* ScannedLectureListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLectureListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF62AEF2AC95511004E13A0 /* FirebaseFirestoreSwift in Frameworks */,
 				5C76F0112AA60BA90074D803 /* FirebaseAnalytics in Frameworks */,
 				5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */,
 				5CDCC0102AA6F46D000B59E4 /* FirebaseAuthCombine-Community in Frameworks */,
@@ -98,18 +117,16 @@
 			isa = PBXGroup;
 			children = (
 				5C0341E72AAB5729004D7E6A /* EmailInputView.swift */,
-				5C0341E92AAB622C004D7E6A /* ProgressBarView.swift */,
-				5C0341EB2AAB6D07004D7E6A /* EmailInputStateView.swift */,
 				5C6729372AAD871F007CA69B /* PasswordInputView.swift */,
 				5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */,
 				5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */,
 				5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */,
-				5C6C88FD2AB694F300F29F77 /* PageStepView.swift */,
 				5CE02B1B2AB89662008F5B44 /* UserTypePicker.swift */,
 				5C849F442AB97A8100FCA4D0 /* UserNumberInputView.swift */,
 				5C849F462AB97AF100FCA4D0 /* UserNameInputView.swift */,
 				5C849F482AB97B9200FCA4D0 /* UserTypeSelectionView.swift */,
 				5C849F4A2AB9916C00FCA4D0 /* UserDepartmentSelectionView.swift */,
+				5C6EA5502ACC575D00FC4742 /* PasswordConfirmInputStateView.swift */,
 			);
 			path = SignUpView;
 			sourceTree = "<group>";
@@ -118,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				5CD25D6E2AAA06780037B305 /* UserRepository.swift */,
+				5CD3E4102AC5807B0028FC67 /* BeaconsRepository.swift */,
+				5CF62AEA2AC94B51004E13A0 /* LectureRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -126,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				5CDCC0112AA6F48A000B59E4 /* AuthService.swift */,
+				5C4581782AC320DB0003B3B6 /* BeaconService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -150,16 +170,17 @@
 		5C76EFFE2AA60A970074D803 /* CheckPass */ = {
 			isa = PBXGroup;
 			children = (
+				5CD3E40F2AC57D340028FC67 /* Info.plist */,
 				5C6DD8C22ABA822300F403D5 /* Services */,
 				5C6DD8C12ABA7B5D00F403D5 /* Repositories */,
 				5CDCC0062AA6DC7D000B59E4 /* Model */,
 				5CDCC0052AA6DC77000B59E4 /* ViewModel */,
 				5CDCC0042AA6DC6C000B59E4 /* View */,
 				5C76EFFF2AA60A970074D803 /* CheckPassApp.swift */,
+				5C81B09A2ACB08D6007E8D34 /* ContentView.swift */,
 				5C76F0032AA60A980074D803 /* Assets.xcassets */,
 				5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */,
 				5C76F0052AA60A980074D803 /* Preview Content */,
-				5C0763342ABB3315002ABE82 /* ContentView.swift */,
 			);
 			path = CheckPass;
 			sourceTree = "<group>";
@@ -188,9 +209,27 @@
 			path = SettingView;
 			sourceTree = "<group>";
 		};
+		5CC5C6EB2AC473B300DCF499 /* LectureListView */ = {
+			isa = PBXGroup;
+			children = (
+				5CC5C6EC2AC473E000DCF499 /* LectureListView.swift */,
+			);
+			path = LectureListView;
+			sourceTree = "<group>";
+		};
+		5CC5C6EE2AC474A800DCF499 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				5CC5C6EF2AC474B800DCF499 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		5CDCC0042AA6DC6C000B59E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CC5C6EE2AC474A800DCF499 /* SearchView */,
+				5CC5C6EB2AC473B300DCF499 /* LectureListView */,
 				5CABAE632AB1F04E004501A6 /* SettingView */,
 				5C0341E62AAB571D004D7E6A /* SignUpView */,
 				5C819FF12AA730BA001A5730 /* SignInView */,
@@ -204,6 +243,7 @@
 			children = (
 				5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */,
 				5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */,
+				5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				5CDCC0082AA6DC90000B59E4 /* User.swift */,
+				5CF62AEC2AC94C35004E13A0 /* Lecture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +273,9 @@
 				5C6C89012AB6CDE100F29F77 /* MainAttendanceCardView.swift */,
 				5C11A6FC2ABFE3CC0034D4FE /* AttendanceStatusView.swift */,
 				5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */,
+				5C45817C2AC32A3A0003B3B6 /* ScannedLectureListView.swift */,
+				5CC5C6F12AC479C500DCF499 /* FlagView.swift */,
+				5CF62AF02AC960AC004E13A0 /* ScannedLectureListRowView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -257,6 +301,7 @@
 				5CDCC00D2AA6F46D000B59E4 /* FirebaseAuth */,
 				5CDCC00F2AA6F46D000B59E4 /* FirebaseAuthCombine-Community */,
 				5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */,
+				5CF62AEE2AC95511004E13A0 /* FirebaseFirestoreSwift */,
 			);
 			productName = CheckPass;
 			productReference = 5C76EFFC2AA60A970074D803 /* CheckPass.app */;
@@ -316,18 +361,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC5C6F22AC479C500DCF499 /* FlagView.swift in Sources */,
 				5CDCC0142AA6F929000B59E4 /* SignInView.swift in Sources */,
+				5CF62AF12AC960AC004E13A0 /* ScannedLectureListRowView.swift in Sources */,
 				5CDCC0172AA6FF26000B59E4 /* MainTabView.swift in Sources */,
 				5CDCC00B2AA6DD40000B59E4 /* AuthViewModel.swift in Sources */,
 				5CABAE652AB1F05A004501A6 /* SettingView.swift in Sources */,
 				5CD25D6F2AAA06780037B305 /* UserRepository.swift in Sources */,
 				5C849F452AB97A8100FCA4D0 /* UserNumberInputView.swift in Sources */,
+				5C81B09B2ACB08D6007E8D34 /* ContentView.swift in Sources */,
+				5C45817B2AC326470003B3B6 /* ScannedLecturesViewModel.swift in Sources */,
 				5C6C89002AB69C5100F29F77 /* MainUserInfoVIew.swift in Sources */,
 				5CE02B1C2AB89662008F5B44 /* UserTypePicker.swift in Sources */,
+				5CD3E4112AC5807B0028FC67 /* BeaconsRepository.swift in Sources */,
 				5C849F492AB97B9200FCA4D0 /* UserTypeSelectionView.swift in Sources */,
+				5CC5C6F02AC474B800DCF499 /* SearchView.swift in Sources */,
 				5C76F0002AA60A970074D803 /* CheckPassApp.swift in Sources */,
-				5C0763352ABB3315002ABE82 /* ContentView.swift in Sources */,
-				5C6C88FE2AB694F300F29F77 /* PageStepView.swift in Sources */,
 				5C0341E82AAB5729004D7E6A /* EmailInputView.swift in Sources */,
 				5C849F472AB97AF100FCA4D0 /* UserNameInputView.swift in Sources */,
 				5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */,
@@ -335,13 +384,17 @@
 				5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */,
 				5CDCC0092AA6DC90000B59E4 /* User.swift in Sources */,
 				5CABAE622AB1EFDD004501A6 /* MainView.swift in Sources */,
-				5C0341EC2AAB6D07004D7E6A /* EmailInputStateView.swift in Sources */,
+				5C4581792AC320DB0003B3B6 /* BeaconService.swift in Sources */,
 				5C849F4B2AB9916C00FCA4D0 /* UserDepartmentSelectionView.swift in Sources */,
+				5CF62AEB2AC94B51004E13A0 /* LectureRepository.swift in Sources */,
 				5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */,
+				5C6EA5512ACC575D00FC4742 /* PasswordConfirmInputStateView.swift in Sources */,
 				5C11A6FF2ABFE6400034D4FE /* AttendanceStatusRowView.swift in Sources */,
 				5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */,
 				5CDCC0122AA6F48A000B59E4 /* AuthService.swift in Sources */,
-				5C0341EA2AAB622C004D7E6A /* ProgressBarView.swift in Sources */,
+				5CC5C6ED2AC473E000DCF499 /* LectureListView.swift in Sources */,
+				5CF62AED2AC94C35004E13A0 /* Lecture.swift in Sources */,
+				5C45817D2AC32A3A0003B3B6 /* ScannedLectureListView.swift in Sources */,
 				5C11A6FD2ABFE3CC0034D4FE /* AttendanceStatusView.swift in Sources */,
 				5C6C89022AB6CDE100F29F77 /* MainAttendanceCardView.swift in Sources */,
 			);
@@ -475,6 +528,9 @@
 				DEVELOPMENT_TEAM = QHK65XFL8U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CheckPass/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " 위치 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -504,6 +560,9 @@
 				DEVELOPMENT_TEAM = QHK65XFL8U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CheckPass/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 권한을 허용해주세요.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " 위치 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -576,6 +635,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAuthCombine-Community";
+		};
+		5CF62AEE2AC95511004E13A0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

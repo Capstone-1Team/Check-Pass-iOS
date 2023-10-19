@@ -10,7 +10,6 @@ import SwiftUI
 struct PasswordInputView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @Environment(\.colorScheme) var colorScheme
-    
     @State private var passwordInput: String = ""
     @State private var passwordCheckInput: String = ""
     @Binding var emailInput: String
@@ -49,9 +48,9 @@ struct PasswordInputView: View {
                     Text("다음")
                         .padding(.all, 15)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .light ? .white : .black)
                         .background(Color.accentColor)
-                        .cornerRadius(15)
+                        .cornerRadius(30)
                 })
                 .disabled(passwordInput != passwordCheckInput || passwordInput.isEmpty)
             }

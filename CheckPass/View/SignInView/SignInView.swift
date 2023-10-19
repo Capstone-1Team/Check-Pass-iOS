@@ -10,7 +10,6 @@ import FirebaseAuth
 
 struct SignInView: View {
     @StateObject private var authViewModel: AuthViewModel = AuthViewModel()
-    
     @State private var emailInput: String = ""
     @State private var passwordInput: String = ""
     @State private var showMainView: Bool = false
@@ -20,46 +19,62 @@ struct SignInView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Circle()
-                    .foregroundColor(.blue)
-                    .frame(width: UIScreen.main.bounds.height * 0.3)
-                    .offset(x: -(UIScreen.main.bounds.width * 0.4), y: -(UIScreen.main.bounds.height * 0.5))
-                    .shadow(radius: 20)
-                
-                Circle()
-                    .foregroundColor(.blue)
-                    .frame(width: UIScreen.main.bounds.height * 0.46)
-                    .offset(x: UIScreen.main.bounds.width * 0.6, y: UIScreen.main.bounds.height * 0.5)
-                    .shadow(radius: 20)
+                Image("background_image")
+                    .resizable()
+                    .frame(maxWidth: .infinity)
+                    .ignoresSafeArea()
                 
                 VStack {
-                    if colorScheme == .light {
-                        Image("logo_color")
-                            .resizable()
-                            .frame(width: 1024 * 0.2, height: 256 * 0.2)
-                            .padding([.bottom], UIScreen.main.bounds.height * 0.05)
-                            .padding(.top, UIScreen.main.bounds.height * 0.15)
-                    } else {
-                        Image("logo_white")
-                            .resizable()
-                            .frame(width: 1024 * 0.2, height: 256 * 0.2)
-                            .padding([.bottom], UIScreen.main.bounds.height * 0.05)
-                            .padding(.top, UIScreen.main.bounds.height * 0.15)
-                    }
+                    Text("CHECKPASS")
+                        .foregroundColor(.black)
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, UIScreen.main.bounds.width * 0.2)
+                        .padding(.top, UIScreen.main.bounds.width * 0.3)
                     
-                    TextField("이메일을 입력하세요.", text: $emailInput)
-                        .padding()
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 55)
+                        .opacity(0.6)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray, lineWidth: 1)
+                            HStack {
+                                Image(systemName: "envelope")
+                                    .foregroundColor(.black)
+                                
+                                TextField("",
+                                          text: $emailInput,
+                                          prompt: Text("이메일을 입력하세요").foregroundColor(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255)))
+                            }
+                                .padding()
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255), lineWidth: 1)
                         )
                     
-                    
-                    SecureField("비밀번호를 입력하세요.", text: $passwordInput)
-                        .padding()
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(.white)
+                        .opacity(0.6)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 55)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray, lineWidth: 1)
+                            HStack {
+                                Image("custom_lock")
+                                    .resizable()
+                                    .frame(width: 19)
+                                    .offset(x: 3)
+                                    .padding(.trailing, 4)
+                                
+                                SecureField("",
+                                            text: $passwordInput,
+                                            prompt: Text("비밀번호를 입력하세요").foregroundColor(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255)))
+                            }
+                                .padding()
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 50)
+                                .stroke(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255), lineWidth: 1)
                         )
                     
                     Button(action: {
@@ -71,14 +86,14 @@ struct SignInView: View {
                                 .frame(maxWidth: .infinity)
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 .background(Color.accentColor)
-                                .cornerRadius(15)
+                                .cornerRadius(20)
                         } else {
                             Text("로그인")
                                 .padding(.all, 15)
                                 .frame(maxWidth: .infinity)
                                 .foregroundColor(.white)
-                                .background(Color.accentColor)
-                                .cornerRadius(15)
+                                .background(.black)
+                                .cornerRadius(30)
                         }
                     })
                     .padding([.top, .bottom])
@@ -87,26 +102,27 @@ struct SignInView: View {
                             .environmentObject(authViewModel)
                     }
                     
-                    Divider()
-                        .padding(.bottom)
-                    
                     
                     HStack {
                         Button(action: {
                             authViewModel.showEmailInputView = true
                         }, label: {
                             Text("새 계정 만들기")
-                                .foregroundColor(.gray)
+                                .foregroundColor(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255))
                         })
+                        .padding(.trailing)
                         
-                        Divider()
-                            .frame(height: 30)
+                        Rectangle()
+                            .fill(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255))
+                            .frame(width: 1, height: 30)
                         
                         NavigationLink(destination: {}, label: {
                             Text("비밀번호 찾기")
-                                .foregroundColor(.gray)
+                                .foregroundColor(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255))
                         })
+                        .padding(.leading)
                     }
+                    .padding(.top, 10)
                     
                     Spacer()
                 }

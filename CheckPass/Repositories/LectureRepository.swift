@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 struct LectureRepository {
     static private let db = Firestore.firestore()
     
-    static func fetchDetectedLecture(_ beaconInfo: BeaconInfo) -> AnyPublisher<Lecture, Error> {
+    static func fetchScannedLecture(_ beaconInfo: BeaconInfo) -> AnyPublisher<Lecture, Error> {
         return Future { promise in
             db.collection("LECTURES")
                 .whereField("BEACON_UUID", isEqualTo: beaconInfo.0)

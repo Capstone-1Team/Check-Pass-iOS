@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FlagView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("FlagImage")
+            .resizable()
+            .frame(width: UIScreen.main.bounds.width * 0.67, height: UIScreen.main.bounds.width * 1.3)
+            .offset(y: -40)
     }
 }
 

@@ -30,14 +30,16 @@ struct ScannedLectureListRowView: View {
                     
                     Text(lecture.LECTURE_ROOM)
                 }
+                .foregroundColor(.gray)
+                .padding(.bottom)
                 
                 Button(action:{}, label: {
                     Text("출석하기")
-                        .padding(10)
+                        .padding()
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                        .background(LinearGradient(gradient: Gradient(colors: [.blue, Color(red: 93 / 255, green: 50 / 255, blue: 229 / 255)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .cornerRadius(30)
                 })
             }
             .padding()

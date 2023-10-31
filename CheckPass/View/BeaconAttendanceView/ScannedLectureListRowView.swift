@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ScannedLectureListRowView: View {
+    @EnvironmentObject var scannedLecturesViewModel: ScannedLecturesViewModel
     @Environment(\.colorScheme) var colorScheme
+    @Binding var showLectureSheet: Bool
     
     var lecture: Lecture
     
@@ -33,7 +35,10 @@ struct ScannedLectureListRowView: View {
                 .foregroundColor(.gray)
                 .padding(.bottom)
                 
-                Button(action:{}, label: {
+                Button(action:{
+                    showLectureSheet.toggle()
+                    scannedLecturesViewModel.selectedLecture = lecture
+                }, label: {
                     Text("출석하기")
                         .padding()
                         .frame(maxWidth: .infinity)
@@ -48,5 +53,6 @@ struct ScannedLectureListRowView: View {
 }
 
 #Preview {
-    ScannedLectureListRowView(lecture: Lecture(ATTENDANCE_STATUS: 1, BEACON_MAJOR: 11111, BEACON_MINOR: 22222, BEACON_UUID: "FE850A83-6660-4792-B2CF-886689B32552", CREDIT: "2", GRADE: "3", LECTURE_NAME: "캡스톤 디자인", LECTURE_ROOM: "미래융합정보관 225호", PROFESSOR_NAME: "홍길동", TOTAL_USER: 50))
+    ScannedLectureListRowView(showLectureSheet: .constant(false), lecture: Lecture(ATTENDANCE_STATUS: 1, BEACON_MAJOR: 11111, BEACON_MINOR: 22222, BEACON_UUID: "FE850A83-6660-4792-B2CF-886689B32552", CREDIT: "2", GRADE: "3", LECTURE_NAME: "캡스톤 디자인", LECTURE_ROOM: "미래융합정보관 225호", PROFESSOR_NAME: "홍길동", TOTAL_USER: 50))
+        .environmentObject(ScannedLecturesViewModel())
 }

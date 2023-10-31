@@ -9,6 +9,7 @@ import Combine
 
 final class ScannedLecturesViewModel: ObservableObject {
     @Published var detectedLectures: [Lecture] = []
+    @Published var selectedLecture: Lecture?
     
     private var beaconService: BeaconService?
     private var cancellabes = Set<AnyCancellable>()
@@ -49,4 +50,8 @@ final class ScannedLecturesViewModel: ObservableObject {
             })
             .store(in: &cancellabes)
     }
+    
+//    func getAttendanceStatus(for lectureId: String?) {
+//        
+//    }
 }

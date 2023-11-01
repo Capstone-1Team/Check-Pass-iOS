@@ -24,6 +24,7 @@ struct UserAttendanceCardView: View {
                     
                     Spacer()
                 }
+                .padding(.top)
                 
                 HStack {
                     Text(scannedLecturesViewModel.selectedLecture?.LECTURE_ROOM ?? "")
@@ -72,12 +73,16 @@ struct UserAttendanceCardView: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     Text("학        번: \(userViewModel.user?.USER_NUMBER ?? "")")
+                        .foregroundColor(.black)
                     
                     Text("소        속: \(userViewModel.user?.DEPARTMENT[0] ?? "")")
+                        .foregroundColor(.black)
                     
                     Text("학        과: \(userViewModel.user?.DEPARTMENT[1] ?? "")")
+                        .foregroundColor(.black)
                     
                     Text("현재 시간: \(Date().getCurrentDateString())")
+                        .foregroundColor(.black)
                 }
                 
                 Spacer()

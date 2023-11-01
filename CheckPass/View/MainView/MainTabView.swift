@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @StateObject var attendanceViewModel: AttendanceViewModel = AttendanceViewModel()
     
     var body: some View {
         TabView {

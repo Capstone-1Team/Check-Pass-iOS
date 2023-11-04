@@ -89,9 +89,19 @@ class BeaconService: NSObject, CLLocationManagerDelegate {
                     //beacon과 사용자의 접근 거리가 가까운 경우
                     print("[\(beacon.major.intValue), \(beacon.minor.intValue)] proximity: near")
                     
+                    if !isContain {
+                        detectedBeaconList.append(beaconInfo)
+                        detectedBeaconInfo = beaconInfo
+                    }
+                    
                 case .immediate:
                     //beacon과 사용자가 바로 근처에 있는 경우
                     print("[\(beacon.major.intValue), \(beacon.minor.intValue)] poximity: immediate")
+                    
+                    if !isContain {
+                        detectedBeaconList.append(beaconInfo)
+                        detectedBeaconInfo = beaconInfo
+                    }
                 @unknown case _:
                     //그 외의 데이터가 전달되는 경우
                     print("[\(beacon.major.intValue), \(beacon.minor.intValue)] unkown data")

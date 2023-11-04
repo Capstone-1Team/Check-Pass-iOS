@@ -9,26 +9,21 @@ import Foundation
 import Combine
 
 final class AttendanceViewModel: ObservableObject {
-    @Published var attendanceStatus: Dictionary<String, [Bool]> = [:]
+    @Published var isComplete: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
-        getUserAttendaceStatus()
-    }
-    
-    func getUserAttendaceStatus() {
-        AttendanceRepository.fetchAttendanceStatus()
+    func attendLecture(for lectureId: String) {
+        AttendanceRepository.setAttendanceData(for: lectureId)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("successfully fetched user's attendance status")
+                    print("successfully set attendance data")
                 case .failure(let error):
-                    print("Error: " , error)
+                    print("Error: ", error)
                 }
             }, receiveValue: { [weak self] in
-                print($0)
-                self?.attendanceStatus = $0
+                self?.isComplete = true
             })
             .store(in: &cancellables)
     }

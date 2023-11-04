@@ -6,24 +6,44 @@
 //
 
 import Combine
-import FirebaseFirestore
+import FirebaseDatabase
 import FirebaseAuth
 
 struct AttendanceRepository {
-    static private let db = Firestore.firestore()
+    static let ref: DatabaseReference! = Database.database(url: realtimeDatbaseURL).reference()
     
-    static func fetchAttendanceStatus() -> AnyPublisher<Dictionary<String, [Bool]>, Error> {
+    static func setAttendanceData(for lectureId: String) -> AnyPublisher<Void, Error> {
         return Future { promise in
-            db.collection("ATTENDANCE").document(Auth.auth().currentUser?.uid ?? "")
-                .getDocument { (document, error) in
-                    if let error = error {
-                        promise(.failure(error))
-                    } else {
-                        if let document = document {
-                            promise(.success(document.data() as? Dictionary<String, [Bool]> ?? [:]))
-                        }
-                    }
-                }
+            ref.child("Attendance")
+               .child(lectureId)
+               .child(Auth.auth().currentUser?.uid ?? "")
+               .child("0")
+               .setValue(true) { (error, _) in
+                   guard error == nil else {
+                       promise(.failure(error!))
+                       return
+                   }
+                   
+                   promise(.success(()))
+               }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    static func fetchAttendanceData(for lectureId: String) -> AnyPublisher<[Bool], Error> {
+        return Future { promise in
+            ref.child("Attendance")
+               .child(lectureId)
+               .child(Auth.auth().currentUser?.uid ?? "")
+               .getData(completion: { (error, snapshot) in
+                   guard error == nil else {
+                       promise(.failure(error!))
+                       return
+                   }
+                   
+                   let data = snapshot!.value
+                   promise(.success(data as! [Bool]))
+               })
         }
         .eraseToAnyPublisher()
     }

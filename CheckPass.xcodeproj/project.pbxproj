@@ -13,7 +13,6 @@
 		5C11A6FF2ABFE6400034D4FE /* AttendanceStatusRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */; };
 		5C4581792AC320DB0003B3B6 /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4581782AC320DB0003B3B6 /* BeaconService.swift */; };
 		5C45817B2AC326470003B3B6 /* ScannedLecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */; };
-		5C45817D2AC32A3A0003B3B6 /* ScannedLectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45817C2AC32A3A0003B3B6 /* ScannedLectureListView.swift */; };
 		5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729372AAD871F007CA69B /* PasswordInputView.swift */; };
 		5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */; };
 		5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */; };
@@ -34,7 +33,6 @@
 		5CABAE652AB1F05A004501A6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABAE642AB1F05A004501A6 /* SettingView.swift */; };
 		5CC5C6ED2AC473E000DCF499 /* LectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5C6EC2AC473E000DCF499 /* LectureListView.swift */; };
 		5CC5C6F02AC474B800DCF499 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5C6EF2AC474B800DCF499 /* SearchView.swift */; };
-		5CC5C6F22AC479C500DCF499 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5C6F12AC479C500DCF499 /* FlagView.swift */; };
 		5CD25D6F2AAA06780037B305 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD25D6E2AAA06780037B305 /* UserRepository.swift */; };
 		5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */; };
 		5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */; };
@@ -47,10 +45,20 @@
 		5CDCC0142AA6F929000B59E4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0132AA6F929000B59E4 /* SignInView.swift */; };
 		5CDCC0172AA6FF26000B59E4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */; };
 		5CE02B1C2AB89662008F5B44 /* UserTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE02B1B2AB89662008F5B44 /* UserTypePicker.swift */; };
+		5CF295802AF5FA1700EF7AB9 /* FirebaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2957F2AF5FA1700EF7AB9 /* FirebaseURL.swift */; };
+		5CF295822AF5FA8F00EF7AB9 /* AttendanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF295812AF5FA8F00EF7AB9 /* AttendanceRepository.swift */; };
+		5CF295882AF5FAE600EF7AB9 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF295872AF5FAE600EF7AB9 /* AttendanceViewModel.swift */; };
+		5CF295962AF5FB3900EF7AB9 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF295952AF5FB3900EF7AB9 /* FlagView.swift */; };
+		5CF295982AF5FB5800EF7AB9 /* ScannedLectureListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF295972AF5FB5800EF7AB9 /* ScannedLectureListRowView.swift */; };
+		5CF2959A2AF5FB7B00EF7AB9 /* ScannedLectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF295992AF5FB7B00EF7AB9 /* ScannedLectureListView.swift */; };
+		5CF2959C2AF5FBA100EF7AB9 /* SelectedLectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2959B2AF5FBA100EF7AB9 /* SelectedLectureView.swift */; };
+		5CF2959E2AF5FBC400EF7AB9 /* UserAttendanceCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2959D2AF5FBC400EF7AB9 /* UserAttendanceCarView.swift */; };
+		5CF295A02AF5FDA300EF7AB9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF2959F2AF5FDA300EF7AB9 /* FirebaseDatabase */; };
+		5CF295A22AF5FDA300EF7AB9 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF295A12AF5FDA300EF7AB9 /* FirebaseDatabaseSwift */; };
+		5CF295A52AF61A0500EF7AB9 /* GradiantTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF295A42AF61A0500EF7AB9 /* GradiantTextView.swift */; };
 		5CF62AEB2AC94B51004E13A0 /* LectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF62AEA2AC94B51004E13A0 /* LectureRepository.swift */; };
 		5CF62AED2AC94C35004E13A0 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF62AEC2AC94C35004E13A0 /* Lecture.swift */; };
 		5CF62AEF2AC95511004E13A0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF62AEE2AC95511004E13A0 /* FirebaseFirestoreSwift */; };
-		5CF62AF12AC960AC004E13A0 /* ScannedLectureListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF62AF02AC960AC004E13A0 /* ScannedLectureListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +68,6 @@
 		5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusRowView.swift; sourceTree = "<group>"; };
 		5C4581782AC320DB0003B3B6 /* BeaconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
 		5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLecturesViewModel.swift; sourceTree = "<group>"; };
-		5C45817C2AC32A3A0003B3B6 /* ScannedLectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLectureListView.swift; sourceTree = "<group>"; };
 		5C6729372AAD871F007CA69B /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		5C6729392AAD88E7007CA69B /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
 		5C67293B2AAD8A95007CA69B /* PasswordInputStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputStateView.swift; sourceTree = "<group>"; };
@@ -81,7 +88,6 @@
 		5CABAE642AB1F05A004501A6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5CC5C6EC2AC473E000DCF499 /* LectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListView.swift; sourceTree = "<group>"; };
 		5CC5C6EF2AC474B800DCF499 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		5CC5C6F12AC479C500DCF499 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		5CD25D6E2AAA06780037B305 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		5CD26E922AADEF0A00409606 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
 		5CD3E40F2AC57D340028FC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -92,9 +98,17 @@
 		5CDCC0132AA6F929000B59E4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5CDCC0162AA6FF26000B59E4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5CE02B1B2AB89662008F5B44 /* UserTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypePicker.swift; sourceTree = "<group>"; };
+		5CF2957F2AF5FA1700EF7AB9 /* FirebaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseURL.swift; sourceTree = "<group>"; };
+		5CF295812AF5FA8F00EF7AB9 /* AttendanceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRepository.swift; sourceTree = "<group>"; };
+		5CF295872AF5FAE600EF7AB9 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
+		5CF295952AF5FB3900EF7AB9 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
+		5CF295972AF5FB5800EF7AB9 /* ScannedLectureListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLectureListRowView.swift; sourceTree = "<group>"; };
+		5CF295992AF5FB7B00EF7AB9 /* ScannedLectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLectureListView.swift; sourceTree = "<group>"; };
+		5CF2959B2AF5FBA100EF7AB9 /* SelectedLectureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLectureView.swift; sourceTree = "<group>"; };
+		5CF2959D2AF5FBC400EF7AB9 /* UserAttendanceCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAttendanceCarView.swift; sourceTree = "<group>"; };
+		5CF295A42AF61A0500EF7AB9 /* GradiantTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradiantTextView.swift; sourceTree = "<group>"; };
 		5CF62AEA2AC94B51004E13A0 /* LectureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRepository.swift; sourceTree = "<group>"; };
 		5CF62AEC2AC94C35004E13A0 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
-		5CF62AF02AC960AC004E13A0 /* ScannedLectureListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLectureListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF295A22AF5FDA300EF7AB9 /* FirebaseDatabaseSwift in Frameworks */,
+				5CF295A02AF5FDA300EF7AB9 /* FirebaseDatabase in Frameworks */,
 				5CF62AEF2AC95511004E13A0 /* FirebaseFirestoreSwift in Frameworks */,
 				5C76F0112AA60BA90074D803 /* FirebaseAnalytics in Frameworks */,
 				5CD25D712AAA0DAC0037B305 /* FirebaseFirestore in Frameworks */,
@@ -137,6 +153,7 @@
 				5CD25D6E2AAA06780037B305 /* UserRepository.swift */,
 				5CD3E4102AC5807B0028FC67 /* BeaconsRepository.swift */,
 				5CF62AEA2AC94B51004E13A0 /* LectureRepository.swift */,
+				5CF295812AF5FA8F00EF7AB9 /* AttendanceRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -181,6 +198,7 @@
 				5C76F0032AA60A980074D803 /* Assets.xcassets */,
 				5C76F00D2AA60B4F0074D803 /* GoogleService-Info.plist */,
 				5C76F0052AA60A980074D803 /* Preview Content */,
+				5CF2957F2AF5FA1700EF7AB9 /* FirebaseURL.swift */,
 			);
 			path = CheckPass;
 			sourceTree = "<group>";
@@ -228,6 +246,8 @@
 		5CDCC0042AA6DC6C000B59E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CF295A32AF60AFF00EF7AB9 /* ButtonView */,
+				5CF295942AF5FB2200EF7AB9 /* BeaconAttendanceView */,
 				5CC5C6EE2AC474A800DCF499 /* SearchView */,
 				5CC5C6EB2AC473B300DCF499 /* LectureListView */,
 				5CABAE632AB1F04E004501A6 /* SettingView */,
@@ -244,6 +264,7 @@
 				5CDCC00A2AA6DD40000B59E4 /* AuthViewModel.swift */,
 				5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */,
 				5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */,
+				5CF295872AF5FAE600EF7AB9 /* AttendanceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -273,11 +294,28 @@
 				5C6C89012AB6CDE100F29F77 /* MainAttendanceCardView.swift */,
 				5C11A6FC2ABFE3CC0034D4FE /* AttendanceStatusView.swift */,
 				5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */,
-				5C45817C2AC32A3A0003B3B6 /* ScannedLectureListView.swift */,
-				5CC5C6F12AC479C500DCF499 /* FlagView.swift */,
-				5CF62AF02AC960AC004E13A0 /* ScannedLectureListRowView.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		5CF295942AF5FB2200EF7AB9 /* BeaconAttendanceView */ = {
+			isa = PBXGroup;
+			children = (
+				5CF295952AF5FB3900EF7AB9 /* FlagView.swift */,
+				5CF295972AF5FB5800EF7AB9 /* ScannedLectureListRowView.swift */,
+				5CF295992AF5FB7B00EF7AB9 /* ScannedLectureListView.swift */,
+				5CF2959B2AF5FBA100EF7AB9 /* SelectedLectureView.swift */,
+				5CF2959D2AF5FBC400EF7AB9 /* UserAttendanceCarView.swift */,
+			);
+			path = BeaconAttendanceView;
+			sourceTree = "<group>";
+		};
+		5CF295A32AF60AFF00EF7AB9 /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				5CF295A42AF61A0500EF7AB9 /* GradiantTextView.swift */,
+			);
+			path = ButtonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +340,8 @@
 				5CDCC00F2AA6F46D000B59E4 /* FirebaseAuthCombine-Community */,
 				5CD25D702AAA0DAC0037B305 /* FirebaseFirestore */,
 				5CF62AEE2AC95511004E13A0 /* FirebaseFirestoreSwift */,
+				5CF2959F2AF5FDA300EF7AB9 /* FirebaseDatabase */,
+				5CF295A12AF5FDA300EF7AB9 /* FirebaseDatabaseSwift */,
 			);
 			productName = CheckPass;
 			productReference = 5C76EFFC2AA60A970074D803 /* CheckPass.app */;
@@ -361,12 +401,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CC5C6F22AC479C500DCF499 /* FlagView.swift in Sources */,
 				5CDCC0142AA6F929000B59E4 /* SignInView.swift in Sources */,
-				5CF62AF12AC960AC004E13A0 /* ScannedLectureListRowView.swift in Sources */,
 				5CDCC0172AA6FF26000B59E4 /* MainTabView.swift in Sources */,
 				5CDCC00B2AA6DD40000B59E4 /* AuthViewModel.swift in Sources */,
 				5CABAE652AB1F05A004501A6 /* SettingView.swift in Sources */,
+				5CF2959C2AF5FBA100EF7AB9 /* SelectedLectureView.swift in Sources */,
 				5CD25D6F2AAA06780037B305 /* UserRepository.swift in Sources */,
 				5C849F452AB97A8100FCA4D0 /* UserNumberInputView.swift in Sources */,
 				5C81B09B2ACB08D6007E8D34 /* ContentView.swift in Sources */,
@@ -374,27 +413,34 @@
 				5C6C89002AB69C5100F29F77 /* MainUserInfoVIew.swift in Sources */,
 				5CE02B1C2AB89662008F5B44 /* UserTypePicker.swift in Sources */,
 				5CD3E4112AC5807B0028FC67 /* BeaconsRepository.swift in Sources */,
+				5CF295A52AF61A0500EF7AB9 /* GradiantTextView.swift in Sources */,
 				5C849F492AB97B9200FCA4D0 /* UserTypeSelectionView.swift in Sources */,
 				5CC5C6F02AC474B800DCF499 /* SearchView.swift in Sources */,
+				5CF295982AF5FB5800EF7AB9 /* ScannedLectureListRowView.swift in Sources */,
 				5C76F0002AA60A970074D803 /* CheckPassApp.swift in Sources */,
 				5C0341E82AAB5729004D7E6A /* EmailInputView.swift in Sources */,
 				5C849F472AB97AF100FCA4D0 /* UserNameInputView.swift in Sources */,
 				5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */,
 				5CD26E932AADEF0A00409606 /* UserInfoInputView.swift in Sources */,
+				5CF2959A2AF5FB7B00EF7AB9 /* ScannedLectureListView.swift in Sources */,
 				5C67293A2AAD88E7007CA69B /* PasswordFieldView.swift in Sources */,
+				5CF295882AF5FAE600EF7AB9 /* AttendanceViewModel.swift in Sources */,
 				5CDCC0092AA6DC90000B59E4 /* User.swift in Sources */,
+				5CF295802AF5FA1700EF7AB9 /* FirebaseURL.swift in Sources */,
 				5CABAE622AB1EFDD004501A6 /* MainView.swift in Sources */,
 				5C4581792AC320DB0003B3B6 /* BeaconService.swift in Sources */,
+				5CF295962AF5FB3900EF7AB9 /* FlagView.swift in Sources */,
 				5C849F4B2AB9916C00FCA4D0 /* UserDepartmentSelectionView.swift in Sources */,
 				5CF62AEB2AC94B51004E13A0 /* LectureRepository.swift in Sources */,
 				5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */,
 				5C6EA5512ACC575D00FC4742 /* PasswordConfirmInputStateView.swift in Sources */,
 				5C11A6FF2ABFE6400034D4FE /* AttendanceStatusRowView.swift in Sources */,
 				5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */,
+				5CF295822AF5FA8F00EF7AB9 /* AttendanceRepository.swift in Sources */,
+				5CF2959E2AF5FBC400EF7AB9 /* UserAttendanceCarView.swift in Sources */,
 				5CDCC0122AA6F48A000B59E4 /* AuthService.swift in Sources */,
 				5CC5C6ED2AC473E000DCF499 /* LectureListView.swift in Sources */,
 				5CF62AED2AC94C35004E13A0 /* Lecture.swift in Sources */,
-				5C45817D2AC32A3A0003B3B6 /* ScannedLectureListView.swift in Sources */,
 				5C11A6FD2ABFE3CC0034D4FE /* AttendanceStatusView.swift in Sources */,
 				5C6C89022AB6CDE100F29F77 /* MainAttendanceCardView.swift in Sources */,
 			);
@@ -635,6 +681,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAuthCombine-Community";
+		};
+		5CF2959F2AF5FDA300EF7AB9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		5CF295A12AF5FDA300EF7AB9 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C76F00F2AA60BA90074D803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
 		};
 		5CF62AEE2AC95511004E13A0 /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;

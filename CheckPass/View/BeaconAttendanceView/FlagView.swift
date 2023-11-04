@@ -11,7 +11,7 @@ struct FlagView: View {
     var body: some View {
         Image("FlagImage")
             .resizable()
-            .frame(width: UIScreen.main.bounds.width * 0.67, height: UIScreen.main.bounds.width * 1.3)
+            .frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.width)
             .offset(y: -40)
     }
 }

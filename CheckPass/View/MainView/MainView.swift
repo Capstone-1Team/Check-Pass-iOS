@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct MainView: View {
     @StateObject var userViewModel: UserViewModel = UserViewModel()
+    @StateObject var attendanceViewModel: AttendanceViewModel = AttendanceViewModel()
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -21,7 +22,9 @@ struct MainView: View {
                 
                 HStack {
                     NavigationLink(destination: {
-                        DetectedLectureListView()
+                        ScannedLectureListView()
+                            .environmentObject(attendanceViewModel)
+                            .environmentObject(userViewModel)
                     }, label: {
                         MainAttendanceCardView(title: "비콘", colorFrom: .blue, colorTo: Color(red: 129 / 255, green: 39 / 255, blue: 228 / 255))
                             .padding(.trailing, 3)

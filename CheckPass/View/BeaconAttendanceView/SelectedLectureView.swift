@@ -2,7 +2,7 @@
 //  SelectedLectureView.swift
 //  CheckPass
 //
-//  Created by 이정훈 on 10/30/23.
+//  Created by 이정훈 on 11/4/23.
 //
 
 import SwiftUI
@@ -10,6 +10,8 @@ import SwiftUI
 struct SelectedLectureView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @EnvironmentObject var scannedLecturesViewModel: ScannedLecturesViewModel
+    @EnvironmentObject var attendanceViewModel: AttendanceViewModel
+    @Binding var showSheet: Bool
     
     var body: some View {
         ZStack {
@@ -22,27 +24,30 @@ struct SelectedLectureView: View {
                     .environmentObject(userViewModel)
                     .padding([.leading, .trailing, .top])
                 
-                Image(systemName: "arrow.down")
+                Image("arrow")
                     .foregroundColor(.white)
                     .font(.largeTitle)
-                    .padding([.top, .bottom], 7)
+                    .padding([.top, .bottom], 10)
                 
-                Button(action: {}, label: {
-                    Text("출석하기")
-                        .foregroundColor(.white)
-                        .padding(.all, 15)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(30)
+                Button(action: {
+                    attendanceViewModel.attendLecture(for: scannedLecturesViewModel.selectedLecture!.id ?? "")
+                }, label: {
+                    GradiantTextView(label: "출석하기", startColor: .blue, endColor: Color(red: 93 / 255, green: 50 / 255, blue: 229 / 255))
                 })
                 .padding([.leading, .trailing, .bottom])
+                .alert(isPresented: $attendanceViewModel.isComplete, content: {
+                    Alert(title: Text("알림"), message: Text("출석을 완료했어요"), dismissButton: .default(Text("확인"), action: {
+                        self.showSheet.toggle()
+                    }))
+                })
             }
         }
     }
 }
 
 #Preview {
-    SelectedLectureView()
+    SelectedLectureView(showSheet: .constant(true))
         .environmentObject(ScannedLecturesViewModel())
         .environmentObject(UserViewModel())
+        .environmentObject(AttendanceViewModel())
 }

@@ -1,8 +1,8 @@
 //
-//  DetectedLectureListRowView.swift
+//  ScannedLectureListRowView.swift
 //  CheckPass
 //
-//  Created by 이정훈 on 10/1/23.
+//  Created by 이정훈 on 11/4/23.
 //
 
 import SwiftUI
@@ -39,12 +39,7 @@ struct ScannedLectureListRowView: View {
                     showLectureSheet.toggle()
                     scannedLecturesViewModel.selectedLecture = lecture
                 }, label: {
-                    Text("출석하기")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [.blue, Color(red: 93 / 255, green: 50 / 255, blue: 229 / 255)]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .cornerRadius(30)
+                    GradiantTextView(label: "출석하기", startColor: .blue, endColor: Color(red: 93 / 255, green: 50 / 255, blue: 229 / 255))
                 })
             }
             .padding()

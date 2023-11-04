@@ -50,8 +50,4 @@ final class ScannedLecturesViewModel: ObservableObject {
             })
             .store(in: &cancellabes)
     }
-    
-//    func getAttendanceStatus(for lectureId: String?) {
-//        
-//    }
 }

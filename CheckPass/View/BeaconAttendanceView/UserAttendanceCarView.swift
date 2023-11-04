@@ -1,8 +1,8 @@
 //
-//  UserAttendanceCardVIew.swift
+//  UserAttendanceCarView.swift
 //  CheckPass
 //
-//  Created by 이정훈 on 10/30/23.
+//  Created by 이정훈 on 11/4/23.
 //
 
 import SwiftUI

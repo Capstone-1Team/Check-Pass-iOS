@@ -32,7 +32,7 @@ final class ScannedLecturesViewModel: ObservableObject {
                 let publisher = self?.beaconService?.$detectedBeaconInfo
                 
                 publisher?.sink(receiveValue: {
-                    LectureRepository.fetchScannedLecture($0)
+                    LectureRepository.fetchScannedLecture(beaconInfo: $0)
                         .sink(receiveCompletion: { completion in
                             switch completion {
                             case .finished:

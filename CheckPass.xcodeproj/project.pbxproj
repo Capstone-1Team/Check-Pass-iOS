@@ -11,6 +11,7 @@
 		5C0341E82AAB5729004D7E6A /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0341E72AAB5729004D7E6A /* EmailInputView.swift */; };
 		5C11A6FD2ABFE3CC0034D4FE /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A6FC2ABFE3CC0034D4FE /* AttendanceStatusView.swift */; };
 		5C11A6FF2ABFE6400034D4FE /* AttendanceStatusRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */; };
+		5C11D6F32AF773E700E19637 /* LectureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11D6F22AF773E700E19637 /* LectureViewModel.swift */; };
 		5C4581792AC320DB0003B3B6 /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4581782AC320DB0003B3B6 /* BeaconService.swift */; };
 		5C45817B2AC326470003B3B6 /* ScannedLecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */; };
 		5C6729382AAD871F007CA69B /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6729372AAD871F007CA69B /* PasswordInputView.swift */; };
@@ -66,6 +67,7 @@
 		5C0341E72AAB5729004D7E6A /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
 		5C11A6FC2ABFE3CC0034D4FE /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		5C11A6FE2ABFE6400034D4FE /* AttendanceStatusRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusRowView.swift; sourceTree = "<group>"; };
+		5C11D6F22AF773E700E19637 /* LectureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureViewModel.swift; sourceTree = "<group>"; };
 		5C4581782AC320DB0003B3B6 /* BeaconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
 		5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedLecturesViewModel.swift; sourceTree = "<group>"; };
 		5C6729372AAD871F007CA69B /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				5C0341E42AAB4B20004D7E6A /* UserViewModel.swift */,
 				5C45817A2AC326470003B3B6 /* ScannedLecturesViewModel.swift */,
 				5CF295872AF5FAE600EF7AB9 /* AttendanceViewModel.swift */,
+				5C11D6F22AF773E700E19637 /* LectureViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				5C0341E52AAB4B20004D7E6A /* UserViewModel.swift in Sources */,
 				5C6EA5512ACC575D00FC4742 /* PasswordConfirmInputStateView.swift in Sources */,
 				5C11A6FF2ABFE6400034D4FE /* AttendanceStatusRowView.swift in Sources */,
+				5C11D6F32AF773E700E19637 /* LectureViewModel.swift in Sources */,
 				5C67293C2AAD8A96007CA69B /* PasswordInputStateView.swift in Sources */,
 				5CF295822AF5FA8F00EF7AB9 /* AttendanceRepository.swift in Sources */,
 				5CF2959E2AF5FBC400EF7AB9 /* UserAttendanceCarView.swift in Sources */,

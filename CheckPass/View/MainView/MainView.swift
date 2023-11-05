@@ -41,6 +41,9 @@ struct MainView: View {
             }
             .padding([.leading, .trailing])
         }
+        .onChange(of: userViewModel.user, perform: { newUser in
+            attendanceViewModel.getAttendanceData(lectures: newUser?.LECTURES)
+        })
         .safeAreaInset(edge: .top, content: {
             HStack {
                 Text("CHECKPASS")

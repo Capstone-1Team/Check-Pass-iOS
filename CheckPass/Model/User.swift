@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct User: Equatable {
     var USER_NUMBER: String    //Student Id or Professor Id
     var LECTURES: [String]
     var PROFILE_IMAGE: String

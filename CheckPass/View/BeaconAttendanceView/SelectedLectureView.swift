@@ -37,6 +37,7 @@ struct SelectedLectureView: View {
                 .padding([.leading, .trailing, .bottom])
                 .alert(isPresented: $attendanceViewModel.isComplete, content: {
                     Alert(title: Text("알림"), message: Text("출석을 완료했어요"), dismissButton: .default(Text("확인"), action: {
+                        attendanceViewModel.getAttendanceData(lectures: userViewModel.user?.LECTURES)
                         self.showSheet.toggle()
                     }))
                 })

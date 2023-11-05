@@ -10,6 +10,7 @@ import Combine
 
 final class AttendanceViewModel: ObservableObject {
     @Published var isComplete: Bool = false
+    @Published var attendanceData: Dictionary<String, [Bool]> = [:]
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -26,5 +27,22 @@ final class AttendanceViewModel: ObservableObject {
                 self?.isComplete = true
             })
             .store(in: &cancellables)
+    }
+    
+    func getAttendanceData(lectures: [String]?) {
+        lectures?.forEach { lectureId in
+            AttendanceRepository.fetchAttendanceData(for: lectureId)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        print("successfully fetch User attendance data")
+                    case .failure(let error):
+                        print("Error: ", error)
+                    }
+                }, receiveValue: { [weak self] in
+                    self?.attendanceData[lectureId] = $0
+                })
+                .store(in: &cancellables)
+        }
     }
 }

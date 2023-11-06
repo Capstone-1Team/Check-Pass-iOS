@@ -20,12 +20,10 @@ struct ScannedLectureListView: View {
                 .navigationBarTitleDisplayMode(.inline)
         } else {
             ScrollView {
-                VStack {
-                    ForEach(scannedLecturesViewModel.detectedLectures, id: \.id) {
-                        ScannedLectureListRowView(showLectureSheet: $showSheet, lecture: $0)
-                            .environmentObject(scannedLecturesViewModel)
-                            .padding()
-                    }
+                ForEach(scannedLecturesViewModel.detectedLectures, id: \.id) {
+                    ScannedLectureListRowView(showLectureSheet: $showSheet, lecture: $0)
+                        .environmentObject(scannedLecturesViewModel)
+                        .padding()
                 }
             }
             .sheet(isPresented: $showSheet, content: {

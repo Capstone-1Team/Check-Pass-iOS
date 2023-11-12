@@ -8,12 +8,12 @@
 import Combine
 
 final class EAttendanceInfoViewModel: ObservableObject {
-    @Published var electronicAttendanceInfo: ElectronicAttendanceInfo?
+    @Published var eAttendanceInfo: EAttendanceInfo?
     
     private var cancellables = Set<AnyCancellable>()
     
-    func getElectronicAttendanceInfo(lectureId: String) {
-        ElectronicAttendanceInfoRepository.fetchElectronicAttendanceInfo(for: lectureId)
+    func getEAttendanceInfo(lectureId: String) {
+        EAttendanceInfoRepository.fetchElectronicAttendanceInfo(for: lectureId)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -22,7 +22,7 @@ final class EAttendanceInfoViewModel: ObservableObject {
                     print("Error: ", error)
                 }
             }, receiveValue: { [weak self] info in
-                self?.electronicAttendanceInfo = info
+                self?.eAttendanceInfo = info
             })
             .store(in: &cancellables)
     }

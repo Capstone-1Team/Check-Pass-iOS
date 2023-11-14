@@ -16,18 +16,18 @@ struct EAttendanceListView: View {
         if !lectureViewModel.lectures.isEmpty {
             ScrollView {
                 ForEach(lectureViewModel.lectures) { lecture in
-                    ElectronicAttendanceListRowView(showSheet: $showSheet, lecture: lecture)
+                    EAttendanceListRowView(showSheet: $showSheet, lecture: lecture)
                         .padding([.leading, .bottom, .trailing])
                 }
             }
             .navigationTitle("전자 출석하기")
             .sheet(isPresented: $showSheet) {
-                SelectedLectureDetailView()
+                SelectedLectureDetailView(showSheet: $showSheet)
                     .environmentObject(lectureViewModel)
                     .environmentObject(attendanceViewModel)
             }
         } else {
-            Text("등록된 강의가 없습니다")
+            NoLectureView()
                 .navigationTitle("전자 출석하기")
         }
     }

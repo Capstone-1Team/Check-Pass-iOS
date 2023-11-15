@@ -12,7 +12,11 @@ final class EAttendanceInfoViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    func getEAttendanceInfo(lectureId: String) {
+    func getEAttendanceInfo(lectureId: String?) {
+        guard let lectureId = lectureId else {
+            return
+        }
+        
         EAttendanceInfoRepository.fetchElectronicAttendanceInfo(for: lectureId)
             .sink(receiveCompletion: { completion in
                 switch completion {

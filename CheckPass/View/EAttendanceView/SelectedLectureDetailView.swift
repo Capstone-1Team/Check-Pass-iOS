@@ -61,7 +61,7 @@ struct SelectedLectureDetailView: View {
             if !attendanceViewModel.isProgress {
                 Button(action:{
                     attendanceViewModel.isProgress.toggle()
-                    eAttendanceViewModel.getEAttendanceInfo(lectureId: lectureViewModel.selectedLecture?.id ?? "")
+                    eAttendanceViewModel.getEAttendanceInfo(lectureId: lectureViewModel.selectedLecture?.id)
                 }, label: {
                     GradiantTextView(label: "출석하기", startColor: .blue, endColor: Color(red: 93 / 255, green: 50 / 255, blue: 229 / 255))
                 })

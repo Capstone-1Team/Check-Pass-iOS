@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Lecture: Codable {
+struct Lecture: Codable, Identifiable {
     @DocumentID var id: String?
     var ATTENDANCE_STATUS: Int    //출석 현황
     var BEACON_MAJOR: Int    //beacon major value

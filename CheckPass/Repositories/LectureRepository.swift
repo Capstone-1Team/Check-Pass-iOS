@@ -6,13 +6,12 @@
 //
 
 import Combine
-import Firebase
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 struct LectureRepository {
     static private let db = Firestore.firestore()
     
-    static func fetchScannedLecture(_ beaconInfo: BeaconInfo) -> AnyPublisher<Lecture, Error> {
+    static func fetchScannedLecture(beaconInfo: BeaconInfo) -> AnyPublisher<Lecture, Error> {
         return Future { promise in
             db.collection("LECTURES")
                 .whereField("BEACON_UUID", isEqualTo: beaconInfo.0)
@@ -32,6 +31,22 @@ struct LectureRepository {
                         }
                     }
                 }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    static func fetchLecture(lectureId: String) -> AnyPublisher<Lecture, Error> {
+        return Future { promise in
+            db.collection("LECTURES")
+              .document(lectureId)
+              .getDocument(as: Lecture.self) { result in
+                  switch result {
+                  case .success(let lecture):
+                      promise(.success(lecture))
+                  case .failure(let error):
+                      promise(.failure(error))
+                  }
+              }
         }
         .eraseToAnyPublisher()
     }

@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct WeekAttendanceStatus: View {
+    var week: Int
+    var isAttend: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width: UIScreen.main.bounds.width * 0.09, height: UIScreen.main.bounds.width * 0.09)
+                .foregroundColor(isAttend ? .blue : .gray)
+            
+            Text("\(week)")
+                .foregroundColor(.white)
+        }
     }
 }
 
 #Preview {
-    WeekAttendanceStatus()
+    WeekAttendanceStatus(week: 1, isAttend: false)
 }

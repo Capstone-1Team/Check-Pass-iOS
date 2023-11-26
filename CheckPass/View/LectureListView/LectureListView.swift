@@ -12,6 +12,8 @@ struct LectureListView: View {
     @EnvironmentObject var lectureViewModel: LectureViewModel
     @EnvironmentObject var attendanceViewModel: AttendanceViewModel
     
+    @State private var showSheet: Bool = false
+    
     var body: some View {
         List {
             ForEach(lectureViewModel.lectures) { lecture in
@@ -33,12 +35,24 @@ struct LectureListView: View {
                         .padding(.leading)
                     
                     Spacer()
+                    
+                    Button(action: {
+                        showSheet.toggle()
+                    }, label: {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.title2)
+                    })
+                    .padding(.trailing)
                 }
                 .padding([.top], 8)
                 
                 Divider()
             }
             .background(colorScheme == .light ? .white : .black)
+        })
+        .sheet(isPresented: $showSheet, content: {
+            SearchedLectureListView()
+                .environmentObject(lectureViewModel)
         })
     }
 }

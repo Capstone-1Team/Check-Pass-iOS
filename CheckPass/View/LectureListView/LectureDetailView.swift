@@ -11,51 +11,91 @@ struct LectureDetailView: View {
     @EnvironmentObject var attendanceViewModel: AttendanceViewModel
     
     var lecture: Lecture
+    private var boon: String {
+        lecture.id?.components(separatedBy: "-")[1] ?? "1"
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(lecture.LECTURE_NAME)
+                Text("\(lecture.LECTURE_NAME) \(boon)분반")
                     .bold()
                     .font(.title)
                 
                 Spacer()
             }
             
-            Text("\(lecture.PROFESSOR_NAME) 교수님")
-                .padding(.bottom)
-            
-            Text(lecture.LECTURE_TIME1.joined(separator: " "))
-            
-            Text(lecture.LECTURE_ROOM)
-                .padding(.bottom)
-            
             HStack {
+                Text("\(lecture.PROFESSOR_NAME) 교수님")
+                
                 Spacer()
                 
-                if let id = lecture.id {
-                    ForEach(1...8, id: \.self) { week in
-                        if let isAttend = attendanceViewModel.attendanceData[id]?[week - 1] {
-                            WeekAttendanceStatus(week: week, isAttend: isAttend)
+                Text(lecture.DETAILS)
+            }
+            .padding(.bottom)
+            
+            Text("강의 시간")
+                .bold()
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.gray, lineWidth: 1)
+                    .frame(height: UIScreen.main.bounds.width * 0.2)
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(lecture.LECTURE_TIME1.joined(separator: " "))
+                        
+                        if !lecture.LECTURE_TIME2.isEmpty {
+                            Text("/  \(lecture.LECTURE_TIME2.joined(separator: " "))")
                         }
+                        
+                        Spacer()
                     }
+                    
+                    Text(lecture.LECTURE_ROOM)
                 }
-                
-                Spacer()
+                .padding()
             }
             
-            HStack {
-                Spacer()
+            Text("출석 현황")
+                .bold()
+                .padding(.top)
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.gray, lineWidth: 1)
+                    .frame(height: UIScreen.main.bounds.width * 0.3)
                 
-                if let id = lecture.id {
-                    ForEach(9...16, id: \.self) { week in
-                        if let isAttend = attendanceViewModel.attendanceData[id]?[week - 1] {
-                            WeekAttendanceStatus(week: week, isAttend: isAttend)
+                VStack {
+                    HStack {
+                        Spacer()
+                        
+                        if let id = lecture.id {
+                            ForEach(1...8, id: \.self) { week in
+                                if let isAttend = attendanceViewModel.attendanceData[id]?[week - 1] {
+                                    WeekAttendanceStatus(week: week, isAttend: isAttend)
+                                }
+                            }
                         }
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        
+                        if let id = lecture.id {
+                            ForEach(9...16, id: \.self) { week in
+                                if let isAttend = attendanceViewModel.attendanceData[id]?[week - 1] {
+                                    WeekAttendanceStatus(week: week, isAttend: isAttend)
+                                }
+                            }
+                        }
+                        
+                        Spacer()
                     }
                 }
-                
-                Spacer()
             }
             
             Spacer()
@@ -63,10 +103,6 @@ struct LectureDetailView: View {
         .padding()
         .navigationTitle("강의 정보")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear(perform: {
-            print(attendanceViewModel.attendanceData)
-            print(lecture.id)
-        })
     }
 }
 
